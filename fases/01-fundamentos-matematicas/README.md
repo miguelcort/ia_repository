@@ -19,13 +19,13 @@
 | 13 | ✅ | Estabilidad numérica | Construir | Python |
 | 14 | ✅ | Normas y distancias | Construir | Python |
 | 15 | ✅ | Estadística para ML | Construir | Python |
-| 16 | 🚧 | Métodos de muestreo | Construir | Python |
-| 17 | 🚧 | Sistemas lineales | Construir | Python |
-| 18 | 🚧 | Optimización convexa | Construir | Python |
-| 19 | 🚧 | Números complejos para IA | Aprender | Python |
-| 20 | 🚧 | La transformada de Fourier | Construir | Python |
-| 21 | 🚧 | Teoría de grafos para ML | Construir | Python |
-| 22 | 🚧 | Procesos estocásticos | Aprender | Python |
+| 16 | ✅ | Métodos de muestreo | Construir | Python |
+| 17 | ✅ | Sistemas lineales | Construir | Python |
+| 18 | ✅ | Optimización convexa | Construir | Python |
+| 19 | ✅ | Números complejos para IA | Aprender | Python |
+| 20 | ✅ | La transformada de Fourier | Construir | Python |
+| 21 | ✅ | Teoría de grafos para ML | Construir | Python |
+| 22 | ✅ | Procesos estocásticos | Aprender | Python |
 
 ## Prerrequisitos
 
