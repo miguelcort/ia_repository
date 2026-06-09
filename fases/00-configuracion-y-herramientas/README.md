@@ -8,7 +8,7 @@
 | 02 | ✅ | Git y colaboración | Aprender | Bash |
 | 03 | ✅ | Configuración de GPU y nube | Construir | Python |
 | 04 | ✅ | APIs y claves | Construir | Python |
-| 05 | 🚧 | Jupyter Notebooks | Construir | Python |
+| 05 | ✅ | Jupyter Notebooks | Construir | Python |
 | 06 | 🚧 | Entornos virtuales de Python | Construir | Shell |
 | 07 | 🚧 | Docker para IA | Construir | Docker |
 | 08 | 🚧 | Configuración del editor (VS Code) | Construir | — |
