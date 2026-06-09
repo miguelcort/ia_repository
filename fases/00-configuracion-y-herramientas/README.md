@@ -14,7 +14,7 @@
 | 08 | ✅ | Configuración del editor (VS Code) | Construir | Python |
 | 09 | ✅ | Gestión de datos | Construir | Python |
 | 10 | ✅ | Terminal y shell | Aprender | Bash |
-| 11 | 🚧 | Linux para IA | Aprender | Bash |
+| 11 | ✅ | Linux para IA | Aprender | Bash |
 | 12 | 🚧 | Depuración y profiling | Construir | Python |
 
 ## Prerrequisitos
