@@ -46,7 +46,7 @@ Fase 19  ─ Proyectos capstone
 
 | # | Fase | Slug | Lecciones (plan) | Estado |
 |:--:|------|------|:---:|:--:|
-| 0 | Setup y herramientas | `00-configuracion-y-herramientas` | 12 | ⬚ |
+| 0 | Setup y herramientas | `00-configuracion-y-herramientas` | 12 | ✅ |
 | 1 | Fundamentos de matemáticas | `01-fundamentos-matematicas` | 22 | ⬚ |
 | 2 | Fundamentos de ML | `02-fundamentos-ml` | 18 | ⬚ |
 | 3 | Núcleo de Deep Learning | `03-nucleo-deep-learning` | 13 | ⬚ |

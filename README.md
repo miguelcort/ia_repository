@@ -33,28 +33,28 @@ Este repositorio **no es un clon** del repo original. Es una
 
 ## 🗺️ Las 20 fases
 
-| # | Fase | Slug | Estado |
-|:--:|------|------|:--:|
-| 0 | Configuración y herramientas | `00-configuracion-y-herramientas` | 🚧 |
-| 1 | Fundamentos de matemáticas | `01-fundamentos-matematicas` | 🚧 |
-| 2 | Fundamentos de ML | `02-fundamentos-ml` | 🚧 |
-| 3 | Núcleo de Deep Learning | `03-nucleo-deep-learning` | 🚧 |
-| 4 | Visión por computador | `04-vision-por-computador` | 🚧 |
-| 5 | NLP: de fundamentos a avanzado | `05-nlp-fundamentos-a-avanzado` | 🚧 |
-| 6 | Voz y audio | `06-voz-y-audio` | ⬚ |
-| 7 | Transformers a fondo | `07-transformers-a-fondo` | ⬚ |
-| 8 | IA generativa | `08-ia-generativa` | ⬚ |
-| 9 | Aprendizaje por refuerzo | `09-aprendizaje-por-refuerzo` | 🚧 |
-| 10 | LLMs desde cero | `10-llms-desde-cero` | ⬚ |
-| 11 | Ingeniería de LLMs | `11-ingenieria-llms` | ⬚ |
-| 12 | IA multimodal | `12-ia-multimodal` | ⬚ |
-| 13 | Herramientas y protocolos | `13-herramientas-y-protocolos` | ⬚ |
-| 14 | Ingeniería de agentes | `14-ingenieria-agentes` | ⬚ |
-| 15 | Sistemas autónomos | `15-sistemas-autonomos` | ⬚ |
-| 16 | Multi-agente y enjambres | `16-multi-agente-y-enjambres` | ⬚ |
-| 17 | Infraestructura y producción | `17-infraestructura-y-produccion` | 🚧 |
-| 18 | Ética y alineación | `18-etica-y-alineacion` | 🚧 |
-| 19 | Proyectos capstone | `19-proyectos-capstone` | 🚧 |
+| # | Fase | Slug | Lecciones | Estado |
+|:--:|------|------|:---:|:--:|
+| 0 | Configuración y herramientas | `00-configuracion-y-herramientas` | 12 | ✅ |
+| 1 | Fundamentos de matemáticas | `01-fundamentos-matematicas` | 22 | ⬚ |
+| 2 | Fundamentos de ML | `02-fundamentos-ml` | 18 | ⬚ |
+| 3 | Núcleo de Deep Learning | `03-nucleo-deep-learning` | 13 | ⬚ |
+| 4 | Visión por computador | `04-vision-por-computador` | 28 | ⬚ |
+| 5 | NLP: de fundamentos a avanzado | `05-nlp-fundamentos-a-avanzado` | 29 | ⬚ |
+| 6 | Voz y audio | `06-voz-y-audio` | 17 | ⬚ |
+| 7 | Transformers a fondo | `07-transformers-a-fondo` | 16 | ⬚ |
+| 8 | IA generativa | `08-ia-generativa` | 15 | ⬚ |
+| 9 | Aprendizaje por refuerzo | `09-aprendizaje-por-refuerzo` | 12 | ⬚ |
+| 10 | LLMs desde cero | `10-llms-desde-cero` | 25 | ⬚ |
+| 11 | Ingeniería de LLMs | `11-ingenieria-llms` | 17 | ⬚ |
+| 12 | IA multimodal | `12-ia-multimodal` | 25 | ⬚ |
+| 13 | Herramientas y protocolos | `13-herramientas-y-protocolos` | 23 | ⬚ |
+| 14 | Ingeniería de agentes | `14-ingenieria-agentes` | 42 | ⬚ |
+| 15 | Sistemas autónomos | `15-sistemas-autonomos` | — | ⬚ |
+| 16 | Multi-agente y enjambres | `16-multi-agente-y-enjambres` | — | ⬚ |
+| 17 | Infraestructura y producción | `17-infraestructura-y-produccion` | — | ⬚ |
+| 18 | Ética y alineación | `18-etica-y-alineacion` | — | ⬚ |
+| 19 | Proyectos capstone | `19-proyectos-capstone` | — | ⬚ |
 
 > ✅ Completa · 🚧 En construcción · ⬚ Pendiente.
 > Detalle por fase: [ROADMAP.md](./ROADMAP.md).
