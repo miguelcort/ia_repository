@@ -4,7 +4,7 @@
 
 | # | Estado | Lección | Tipo | Lenguaje |
 |:--:|:--:|---|:--:|---|
-| 01 | 🚧 | Entorno de desarrollo (Python, Git, IDE) | Construir | Python |
+| 01 | ✅ | Entorno de desarrollo | Construir | Python |
 | 02 | 🚧 | Git y colaboración | Aprender | — |
 | 03 | 🚧 | Configuración de GPU y nube | Construir | Python |
 | 04 | 🚧 | APIs y claves | Construir | Python |
