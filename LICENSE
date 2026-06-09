@@ -1,6 +1,10 @@
 MIT License
 
-Copyright (c) 2024 Universidad Distrital Francisco José de Caldas - Diplomado Machine Learning
+Copyright (c) 2024-2026 Universidad Distrital Francisco José de Caldas
+                      — Diplomado Machine Learning
+
+Adaptación al español del currículo
+"AI Engineering from Scratch" de Rohit Ghumare, Copyright (c) Rohit Ghumare.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -24,10 +28,28 @@ SOFTWARE.
 
 ## Nota Académica
 
-Este repositorio es material educativo del Diplomado en Machine Learning de la
-Universidad Distrital Francisco José de Caldas. El contenido está destinado para
-fines académicos y de aprendizaje.
+Este repositorio es material educativo del Diplomado en Machine Learning
+de la Universidad Distrital Francisco José de Caldas, en su adaptación
+al español del currículo AI Engineering from Scratch. Está destinado
+para fines académicos y de aprendizaje.
 
-Los datasets, modelos pre-entrenados y recursos de terceros incluidos o referenciados
-pueden estar sujetos a sus propias licencias. Los usuarios deben verificar y cumplir
-con las licencias correspondientes de cualquier material de terceros.
+### Material de terceros
+
+- El **plan de estudios, la nomenclatura de las 20 fases, el formato de
+  lecciones y las plantillas** son una adaptación del currículo original
+  [AI Engineering from Scratch](https://github.com/rohitg00/ai-engineering-from-scratch)
+  de **Rohit Ghumare** (`@rohitg00`), publicado bajo licencia MIT.
+  La atribución completa y las instrucciones de citación BibTeX están
+  en [CREDITS.md](./CREDITS.md).
+- Los **datasets, modelos pre-entrenados, papers y recursos
+  externos** referenciados mantienen sus propias licencias. Los
+  usuarios deben verificar y cumplir con las licencias correspondientes
+  de cualquier material de terceros.
+
+### Atribuciones clave
+
+| Rol | Persona / Organización | Aporte |
+|---|---|---|
+| Autor del currículo original (inglés) | Rohit Ghumare | Plan de estudios, código, redacción en inglés |
+| Adaptación al español y migración | Miguel Cortés | Traducción, reorganización, mantenimiento |
+| Institución académica | Universidad Distrital Francisco José de Caldas | Espacio, estudiantes, validación pedagógica |

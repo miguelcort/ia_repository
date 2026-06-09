@@ -1,222 +1,243 @@
 # 🚀 Guía de Inicio Rápido
 
-Bienvenido al Diplomado en Machine Learning de la Universidad Distrital. Esta guía te ayudará a empezar rápidamente.
+Bienvenido al **Diplomado en Machine Learning** de la **Universidad
+Distrital Francisco José de Caldas**, en su versión en español del
+currículo [AI Engineering from
+Scratch](https://github.com/rohitg00/ai-engineering-from-scratch) de
+**Rohit Ghumare**.
 
-## 📋 Antes de Empezar
+> Antes de empezar, revisa [CREDITS.md](./CREDITS.md) y
+> [ROADMAP.md](./ROADMAP.md) para entender el plan de estudios.
 
-### Requisitos Previos
-- Python 3.8 o superior instalado
-- Conocimientos básicos de Python
-- Git instalado en tu sistema
-- 10GB de espacio libre en disco
+---
 
-### Conocimientos Recomendados
-- Programación en Python (básico)
-- Matemáticas: álgebra lineal básica, estadística
-- Manejo de línea de comandos
+## 📋 Antes de empezar
 
-## ⚡ Instalación Rápida
+### Requisitos previos
 
-### 1. Clonar el Repositorio
+- **Python 3.10 o superior** instalado.
+- **Git** instalado y configurado.
+- Conocimientos básicos de programación en Python.
+- 10 GB de espacio libre en disco (datasets, modelos, entornos).
+
+### Conocimientos recomendados (no bloqueantes)
+
+- Álgebra lineal básica y estadística.
+- Manejo de la línea de comandos.
+- Inglés para leer documentación técnica.
+
+---
+
+## ⚡ Instalación rápida
+
+### 1. Clonar el repositorio
+
 ```bash
 git clone https://github.com/miguelcort/ia_repository.git
 cd ia_repository
 ```
 
-### 2. Crear Entorno Virtual
-**Windows:**
+### 2. Crear un entorno virtual
+
+**macOS / Linux:**
+
 ```bash
-python -m venv venv
-venv\Scripts\activate
+python3 -m venv .venv
+source .venv/bin/activate
 ```
 
-**Linux/Mac:**
+**Windows (PowerShell):**
+
 ```bash
-python3 -m venv venv
-source venv/bin/activate
+python -m venv .venv
+.venv\Scripts\Activate.ps1
 ```
 
-### 3. Instalar Dependencias
+### 3. Instalar dependencias
+
 ```bash
 pip install --upgrade pip
 pip install -r requirements.txt
 ```
 
-### 4. Verificar Instalación
-```python
-python -c "import numpy, pandas, sklearn, tensorflow; print('¡Todo listo!')"
+### 4. Verificar la instalación
+
+```bash
+python3 -c "import numpy, pandas, sklearn, torch, transformers; print('OK')"
 ```
 
-### 5. Iniciar Jupyter
+### 5. Lanzar Jupyter
+
 ```bash
 jupyter lab
 ```
 
-## 📚 Primeros Pasos
+---
 
-### Día 1: Familiarízate con la Estructura
-1. Lee el [README principal](./README.md)
-2. Explora la estructura de carpetas
-3. Revisa el [README de la Clase 1](./Clase_01_Introduccion_ML/README.md)
+## 🗺️ Tu primera lección
 
-### Día 2: Primer Notebook
-1. Abre `Clase_01_Introduccion_ML/notebooks/01_primer_modelo.ipynb`
-2. Ejecuta celda por celda
-3. Experimenta modificando el código
+1. Lee el [README principal](./README.md) y este archivo.
+2. Abre el [ROADMAP.md](./ROADMAP.md) para ver el estado de las 20
+   fases.
+3. Ve a la fase que te corresponda según tu nivel (recomendamos
+   empezar por la [Fase 0 — Configuración y
+   herramientas](./fases/00-configuracion-y-herramientas/README.md) o
+   la [Fase 2 — Fundamentos de
+   ML](./fases/02-fundamentos-ml/README.md) si ya programas).
+4. Cada lección vive en
+   `fases/NN-nombre-fase/MM-slug-leccion/` con esta estructura:
 
-### Día 3: Primer Ejercicio
-1. Lee `Clase_01_Introduccion_ML/ejercicios/ejercicio_01_exploracion.md`
-2. Intenta resolverlo por tu cuenta
-3. Compara con las soluciones (cuando estén disponibles)
-
-## 🛠️ Herramientas Recomendadas
-
-### Editores de Código
-- **Jupyter Lab** (ya incluido) - Para notebooks
-- **VS Code** - Editor versátil con extensiones de Python
-- **PyCharm Community** - IDE completo para Python
-
-### Extensiones Útiles para VS Code
-- Python
-- Jupyter
-- Pylance
-- Python Indent
-- GitLens
-
-## 📖 Ruta de Aprendizaje Sugerida
-
-### Semanas 1-2: Fundamentos
-- ✅ Clase 1: Introducción a ML
-- ✅ Clase 2: Procesamiento de Datos
-- 📝 Ejercicios 1-3
-
-### Semanas 3-4: Modelos Clásicos
-- ✅ Clase 3: Modelos Estadísticos
-- 📝 Ejercicios 4-6
-- 🎯 Mini-proyecto: Predicción de precios
-
-### Semanas 5-6: Deep Learning
-- ✅ Clase 4: Introducción a Deep Learning
-- ✅ Clase 5: Convoluciones y Segmentación
-- 📝 Ejercicios 7-10
-
-### Semanas 7-8: Temas Avanzados
-- ✅ Clase 6: Aprendizaje por Refuerzo
-- ✅ Clase 7: Ética en IA
-- ✅ Clase 8: Docker y MLOps
-
-### Semanas 9-10: Proyecto Final
-- 🎓 Prueba Técnica
-- 📊 Presentación
-
-## 💡 Consejos de Estudio
-
-### Buenas Prácticas
-1. **Práctica Diaria**: Dedica al menos 1-2 horas diarias
-2. **Toma Notas**: Documenta lo que aprendes
-3. **Experimenta**: Modifica el código y observa qué pasa
-4. **Pregunta**: Usa los foros y comunidades
-5. **Proyectos Personales**: Aplica lo aprendido en tus propios proyectos
-
-### Gestión de Tiempo
-- 📅 Establece un horario fijo de estudio
-- ⏰ Usa técnica Pomodoro (25 min trabajo, 5 min descanso)
-- 📝 Lleva un registro de tu progreso
-- 🎯 Establece metas semanales
-
-## 🆘 Solución de Problemas Comunes
-
-### Error: "Module not found"
-```bash
-# Asegúrate de tener el entorno virtual activado
-pip install nombre_del_paquete
+```text
+   MM-slug/
+   ├── docs/es.md         # Lee esto primero
+   ├── code/main.py       # Ejecútalo: python3 main.py
+   ├── code/tests/        # Pasa los tests
+   └── notebooks/         # Experimentación opcional
 ```
 
-### Error: "Jupyter command not found"
+5. Ejecuta la lección:
+
+   ```bash
+   cd fases/02-fundamentos-ml/02-regresion-lineal-desde-cero/code
+   python3 main.py
+   python3 -m unittest discover tests -v
+```
+
+---
+
+## 📚 Ruta de aprendizaje sugerida
+
+| Semanas | Foco | Fases |
+|---|---|---|
+| 1-2 | Setup y matemáticas | 0, 1 |
+| 3-4 | ML clásico | 2 |
+| 5-6 | Deep Learning y visión | 3, 4 |
+| 7-8 | NLP y RL | 5, 9 |
+| 9-10 | Transformers y LLMs | 7, 10 |
+| 11-12 | Ingeniería de LLMs y multimodal | 11, 12 |
+| 13-14 | Generativa, herramientas y agentes | 8, 13, 14 |
+| 15-16 | Producción y ética | 17, 18 |
+| 17-18 | Multi-agente y sistemas autónomos | 15, 16 |
+| 19-20 | Capstone | 19 |
+
+---
+
+## 🛠️ Herramientas recomendadas
+
+### Editores
+
+- **VS Code** + extensiones *Python*, *Jupyter*, *Pylance*, *GitLens*.
+- **PyCharm Community** como IDE completo.
+- **JupyterLab** para exploración interactiva.
+
+### Línea de comandos
+
+- **zsh** (macOS por defecto) o **bash** (Linux).
+- **Git** con configuración de `user.name` y `user.email`.
+
+### Opcionales
+
+- **Docker** para las fases 17 y superiores.
+- **GPU NVIDIA** para entrenar modelos pequeños (CUDA 12+).
+- **W&B** o **MLflow** para tracking de experimentos.
+
+---
+
+## 🆘 Solución de problemas comunes
+
+### "ModuleNotFoundError: No module named 'X'"
+
 ```bash
-# Reinstala jupyter
+# Verifica que el entorno virtual esté activo
+which python
+# Debe apuntar a .venv/bin/python
+
+# Reinstala la dependencia
+pip install X
+```
+
+### "jupyter: command not found"
+
+```bash
 pip install --upgrade jupyter jupyterlab
-```
-
-### Kernel no aparece en Jupyter
-```bash
-# Registra el kernel del entorno virtual
 python -m ipykernel install --user --name=venv
 ```
 
-### Problemas con TensorFlow
-```bash
-# Para CPU solamente
-pip install tensorflow-cpu
+### Los notebooks no encuentran los módulos del repositorio
 
-# Para GPU (requiere CUDA)
-pip install tensorflow
+```bash
+# Instala el repo en modo editable
+pip install -e .
 ```
+
+### Errores de PyTorch en macOS Apple Silicon
+
+```bash
+# PyTorch instala el backend MPS automáticamente; no requiere CUDA
+python3 -c "import torch; print(torch.backends.mps.is_available())"
+```
+
+### Quiero entrenar un modelo grande pero no tengo GPU
+
+- Usa **Google Colab** o **Kaggle Notebooks** (ambos con GPU gratuita).
+- Monta este repositorio en Colab con:
+
+  ```python
+  !git clone https://github.com/miguelcort/ia_repository.git
+```
+
+---
 
 ## 📞 Soporte
 
-### Recursos de Ayuda
-- 📧 Correo del instructor: [consultar calendario]
-- 💬 Foro de discusión: [link]
-- 👥 Grupo de estudio: [link]
-- 📚 Documentación oficial: Ver referencias en cada clase
+### Recursos de ayuda
 
-### Horarios de Consulta
-- Consultar con el instructor del diplomado
-- Sesiones de Q&A: [por definir]
+- [Issues del repositorio](https://github.com/miguelcort/ia_repository/issues)
+- Foros de la Universidad Distrital (consultar con el instructor).
+- Documentación oficial de cada librería (enlaces en
+  [`recursos/`](./recursos/)).
 
-## 🎯 Checklist de Inicio
+### Canales del proyecto original
 
-Marca cada item cuando lo completes:
-
-- [ ] Python 3.8+ instalado y funcionando
-- [ ] Repositorio clonado localmente
-- [ ] Entorno virtual creado y activado
-- [ ] Dependencias instaladas correctamente
-- [ ] Jupyter Lab funcionando
-- [ ] Primer notebook ejecutado exitosamente
-- [ ] README principal leído completamente
-- [ ] Estructura del repositorio explorada
-- [ ] Primer ejercicio iniciado
-- [ ] Herramientas de desarrollo configuradas
-
-## 📈 Próximos Pasos
-
-Una vez completada la configuración:
-
-1. 📖 Lee el material de la Clase 1
-2. 💻 Completa el primer notebook
-3. 🏋️ Resuelve el primer ejercicio
-4. 🤝 Únete a la comunidad del diplomado
-5. 🎯 Define tus objetivos personales de aprendizaje
-
-## 🌟 Recursos Adicionales
-
-### Para Reforzar Python
-- [Python.org Tutorial](https://docs.python.org/3/tutorial/)
-- [Real Python](https://realpython.com/)
-- [Python for Everybody](https://www.py4e.com/)
-
-### Para Matemáticas
-- [Khan Academy - Linear Algebra](https://www.khanacademy.org/math/linear-algebra)
-- [Khan Academy - Statistics](https://www.khanacademy.org/math/statistics-probability)
-
-### Práctica Adicional
-- [Kaggle Competitions](https://www.kaggle.com/competitions)
-- [LeetCode](https://leetcode.com/)
-- [HackerRank](https://www.hackerrank.com/)
+- Repositorio de Rohit Ghumare:
+  <https://github.com/rohitg00/ai-engineering-from-scratch/issues>
+- Sitio web: <https://aiengineeringfromscratch.com>
 
 ---
 
-## ✨ ¡Estás Listo!
+## ✅ Checklist de inicio
 
-Ya tienes todo configurado para comenzar tu viaje en Machine Learning. 
-
-**Recuerda:** La clave del éxito es la práctica constante. No te desanimes si algo no funciona a la primera, ¡es parte del proceso de aprendizaje!
-
-🚀 **¡Adelante y mucho éxito!**
+- [ ] Python 3.10+ instalado y funcionando.
+- [ ] Repositorio clonado.
+- [ ] Entorno virtual creado y activado.
+- [ ] Dependencias instaladas sin errores.
+- [ ] JupyterLab lanzando correctamente.
+- [ ] Leí [CREDITS.md](./CREDITS.md) y [ROADMAP.md](./ROADMAP.md).
+- [ ] Ejecuté mi primera lección (`python3 main.py` exit 0).
+- [ ] Pasé los tests de mi primera lección.
+- [ ] Configuré mi editor favorito.
 
 ---
 
-**Última actualización:** Octubre 2024  
-**Versión:** 1.0
+## 📈 Próximos pasos
+
+1. Lee la documentación de la fase que vas a empezar.
+2. Ejecuta el `main.py` de la primera lección.
+3. Lee el `docs/es.md` correspondiente.
+4. Resuelve los ejercicios propuestos.
+5. Cuando te sientas cómodo, envía un PR con mejoras.
+
+---
+
+## ✨ ¡Estás listo!
+
+Ya tienes todo lo necesario para empezar tu viaje de **20 fases** por
+la ingeniería de IA. La clave es la práctica constante: ejecuta el
+código, modifica los ejemplos, rompe cosas y vuelve a armar.
+
+**¡Adelante y mucho éxito!** 🚀
+
+---
+
+**Última actualización:** Junio 2026
+**Versión:** 2.0 (migración al esquema de 20 fases)

@@ -1,0 +1,49 @@
+# Pre-commit hooks para el repositorio ia_repository
+#
+# Instalar con:
+#   pip install pre-commit
+#   pre-commit install
+#
+# Ejecutar manualmente sobre todo el repo:
+#   pre-commit run --all-files
+
+repos:
+  - repo: local
+    hooks:
+      - id: auditar-lecciones
+        name: Auditar estructura de fases y lecciones
+        entry: python3 scripts/auditar_lecciones.py
+        language: system
+        pass_filenames: false
+        types: [markdown]
+        stages: [pre-commit]
+
+      - id: validar-frontmatter
+        name: Validar frontmatter de docs/es.md y nombres de archivos
+        entry: python3 scripts/validar_frontmatter.py
+        language: system
+        pass_filenames: false
+        types_or: [markdown, python]
+        stages: [pre-commit]
+
+      - id: validar-bloques-codigo
+        name: Validar bloques de código (etiquetas + Mermaid) y enlaces
+        entry: python3 scripts/validar_bloques_codigo.py
+        language: system
+        pass_filenames: false
+        types: [markdown]
+        stages: [pre-commit]
+
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.6.0
+    hooks:
+      - id: check-yaml
+        name: Validar sintaxis YAML
+      - id: check-json
+        name: Validar sintaxis JSON
+      - id: end-of-file-fixer
+        name: Asegurar nueva línea al final
+      - id: trailing-whitespace
+        name: Eliminar espacios al final de línea
+      - id: mixed-line-ending
+        name: Forzar finales de línea LF

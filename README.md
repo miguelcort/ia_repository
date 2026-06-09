@@ -1,209 +1,260 @@
-# 🎓 Diplomado en Machine Learning
-## Universidad Distrital Francisco José de Caldas
+# 🎓 Ingeniería de IA desde Cero — versión en español
 
-Repositorio oficial del módulo de Ciencia de Datos y Machine Learning. Este diplomado ofrece una formación completa en inteligencia artificial, desde fundamentos hasta implementación en producción.
+> **Adaptación al español** del currículo
+> [AI Engineering from Scratch](https://github.com/rohitg00/ai-engineering-from-scratch)
+> de **Rohit Ghumare** (`@rohitg00`), publicada bajo la licencia MIT.
+> Ver [CREDITS.md](./CREDITS.md) para la atribución completa.
 
----
-
-## 📚 Estructura del Diplomado
-
-El diplomado está organizado en **8 clases** que cubren todo el espectro del Machine Learning moderno:
-
-### [Clase 1: Introducción a Machine Learning](./Clase_01_Introduccion_ML/)
-Fundamentos de ML, tipos de aprendizaje, y flujo de trabajo en proyectos de ciencia de datos.
-- 🎯 Conceptos básicos de IA y ML
-- 🔍 Tipos de aprendizaje: supervisado, no supervisado, refuerzo
-- 📊 Primeros modelos con Scikit-learn
-
-### [Clase 2: Procesamiento de Datos](./Clase_02_Procesamiento_Datos/)
-Técnicas de limpieza, transformación y preparación de datos para modelos de ML.
-- 🧹 Limpieza y manejo de datos faltantes
-- 📈 Análisis Exploratorio de Datos (EDA)
-- ⚙️ Feature engineering y transformaciones
-
-### [Clase 3: Modelos Estadísticos](./Clase_03_Modelos_Estadisticos/)
-Modelos clásicos de machine learning y sus aplicaciones.
-- 📉 Regresión lineal y logística
-- 🌳 Árboles de decisión y Random Forest
-- 🚀 Gradient Boosting (XGBoost, LightGBM)
-
-### [Clase 4: Introducción a Deep Learning](./Clase_04_Introduccion_Deep_Learning/)
-Fundamentos de redes neuronales y frameworks modernos.
-- 🧠 Arquitectura de redes neuronales
-- 🔄 Backpropagation y optimización
-- 🛠️ TensorFlow y PyTorch
-
-### [Clase 5: Convoluciones y Segmentación de Imágenes](./Clase_05_Convoluciones_Segmentacion/)
-Redes neuronales convolucionales y procesamiento de imágenes.
-- 🖼️ CNNs y arquitecturas clásicas
-- 🎯 Clasificación y detección de objetos
-- 🗺️ Segmentación semántica con U-Net
-
-### [Clase 6: Aprendizaje por Refuerzo](./Clase_06_Aprendizaje_Refuerzo/)
-Algoritmos de reinforcement learning y sus aplicaciones.
-- 🎮 Q-Learning y algoritmos básicos
-- 🤖 Deep Q-Networks (DQN)
-- 🏆 Policy Gradients y Actor-Critic
-
-### [Clase 7: Ética en Inteligencia Artificial](./Clase_07_Etica_IA/)
-Consideraciones éticas, sesgos y IA responsable.
-- ⚖️ Principios de ética en IA
-- 🔍 Detección y mitigación de sesgos
-- 🛡️ Privacidad y protección de datos
-- 💡 Explicabilidad de modelos (XAI)
-
-### [Clase 8: Docker y MLOps](./Clase_08_Docker_MLOps/)
-Despliegue de modelos, contenedorización y ciclo de vida de ML en producción.
-- 🐳 Docker para ML
-- 🔄 Pipelines y automatización
-- 🚀 Despliegue en producción
-- 📊 Monitoreo de modelos
-
-### [Prueba Técnica Final](./Prueba_Tecnica/)
-Proyecto integrador que demuestra competencia en todo el ciclo de vida de ML.
+Repositorio oficial del módulo de **Ciencia de Datos y Machine Learning**
+del **Diplomado en Machine Learning** de la **Universidad Distrital
+Francisco José de Caldas**. Reorganiza el plan del diplomado a un
+esquema de **20 fases y ~503 lecciones**, alineado con el currículo
+de Rohit Ghumare.
 
 ---
 
-## 📂 Organización del Repositorio
+## 📌 Aclaración importante
 
-```
+Este repositorio **no es un clon** del repo original. Es una
+**adaptación pedagógica al español** que:
+
+1. Reorganiza el plan del Diplomado de la Universidad Distrital en un
+   esquema de 20 fases alineado con el currículo de Rohit Ghumare.
+2. Adopta la nomenclatura, el plan de estudios y las plantillas del
+   repo de Rohit Ghumare (Fase 0 → Fase 19, `docs/es.md`, `code/`,
+   `outputs/`, etc.).
+3. Mantiene **atribución explícita** al autor original en
+   [CREDITS.md](./CREDITS.md), en este README y en la cabecera de
+   cada fase.
+4. **No duplica** los archivos `docs/en.md` ni el código de las
+   lecciones del repo original, en respeto a su `AGENTS.md`.
+
+---
+
+## 🗺️ Las 20 fases
+
+| # | Fase | Slug | Estado |
+|:--:|------|------|:--:|
+| 0 | Configuración y herramientas | `00-configuracion-y-herramientas` | 🚧 |
+| 1 | Fundamentos de matemáticas | `01-fundamentos-matematicas` | 🚧 |
+| 2 | Fundamentos de ML | `02-fundamentos-ml` | 🚧 |
+| 3 | Núcleo de Deep Learning | `03-nucleo-deep-learning` | 🚧 |
+| 4 | Visión por computador | `04-vision-por-computador` | 🚧 |
+| 5 | NLP: de fundamentos a avanzado | `05-nlp-fundamentos-a-avanzado` | 🚧 |
+| 6 | Voz y audio | `06-voz-y-audio` | ⬚ |
+| 7 | Transformers a fondo | `07-transformers-a-fondo` | ⬚ |
+| 8 | IA generativa | `08-ia-generativa` | ⬚ |
+| 9 | Aprendizaje por refuerzo | `09-aprendizaje-por-refuerzo` | 🚧 |
+| 10 | LLMs desde cero | `10-llms-desde-cero` | ⬚ |
+| 11 | Ingeniería de LLMs | `11-ingenieria-llms` | ⬚ |
+| 12 | IA multimodal | `12-ia-multimodal` | ⬚ |
+| 13 | Herramientas y protocolos | `13-herramientas-y-protocolos` | ⬚ |
+| 14 | Ingeniería de agentes | `14-ingenieria-agentes` | ⬚ |
+| 15 | Sistemas autónomos | `15-sistemas-autonomos` | ⬚ |
+| 16 | Multi-agente y enjambres | `16-multi-agente-y-enjambres` | ⬚ |
+| 17 | Infraestructura y producción | `17-infraestructura-y-produccion` | 🚧 |
+| 18 | Ética y alineación | `18-etica-y-alineacion` | 🚧 |
+| 19 | Proyectos capstone | `19-proyectos-capstone` | 🚧 |
+
+> ✅ Completa · 🚧 En construcción · ⬚ Pendiente.
+> Detalle por fase: [ROADMAP.md](./ROADMAP.md).
+
+---
+
+## 📚 Estructura del repositorio
+
+```text
 ia_repository/
+├── README.md                  # Este archivo
+├── ROADMAP.md                 # Estado por fase
+├── CREDITS.md                 # Atribuciones a Rohit Ghumare y Universidad Distrital
+├── ESTRUCTURA.md              # Layout completo
+├── PLANTILLA_LECCION.md       # Plantilla de lección en español
+├── CONTRIBUTING.md           # Cómo contribuir
+├── GETTING_STARTED.md         # Guía de inicio rápido
+├── LICENSE                    # MIT — Universidad Distrital + crédito a Rohit
+├── requirements.txt           # Dependencias
 │
-├── Clase_01_Introduccion_ML/          # Fundamentos de ML
-├── Clase_02_Procesamiento_Datos/      # Limpieza y preparación
-├── Clase_03_Modelos_Estadisticos/     # Modelos clásicos
-├── Clase_04_Introduccion_Deep_Learning/  # Redes neuronales
-├── Clase_05_Convoluciones_Segmentacion/  # Visión computacional
-├── Clase_06_Aprendizaje_Refuerzo/     # Reinforcement Learning
-├── Clase_07_Etica_IA/                 # IA responsable
-├── Clase_08_Docker_MLOps/             # Despliegue y producción
-├── Prueba_Tecnica/                    # Proyecto final
-├── Datasets/                          # Conjuntos de datos
-└── Recursos/                          # Material adicional
+├── fases/                     # 20 fases del currículo
+│   ├── 00-configuracion-y-herramientas/
+│   ├── ...
+│   └── 19-proyectos-capstone/
+│
+├── glosario/                  # Términos canónicos en español
+│   └── terminos.md
+│
+├── datasets/                  # Conjuntos de datos pequeños por fase
+├── recursos/                  # Cheatsheets, presentaciones, scripts
+└── scripts/                   # Automatización (auditoría, validación, README)
 ```
 
-Cada carpeta de clase contiene:
-- 📖 `README.md`: Objetivos, contenido y tareas
-- 📓 `notebooks/`: Jupyter notebooks con ejemplos
-- 💻 `code/`: Scripts y utilidades
-- 📝 `ejercicios/`: Ejercicios propuestos
-- 📚 `referencias/`: Material de lectura
+Detalles del layout de una lección: [ESTRUCTURA.md](./ESTRUCTURA.md).
 
 ---
 
-## 🚀 Cómo Usar Este Repositorio
+## 🚀 Cómo usar este repositorio
 
 ### Prerrequisitos
-- Python 3.8 o superior
-- Git instalado
-- Jupyter Notebook o JupyterLab
-- (Opcional) Docker para la clase 8
 
-### Configuración Inicial
+- Python 3.10 o superior.
+- Git.
+- 10 GB de espacio libre (datasets y modelos).
+- (Opcional) Docker y una GPU para las fases 3, 4, 9, 10, 11, 12, 14.
 
-1. **Clonar el repositorio**
-   ```bash
-   git clone https://github.com/miguelcort/ia_repository.git
-   cd ia_repository
-   ```
+### Instalación rápida
 
-2. **Crear entorno virtual** (recomendado)
-   ```bash
-   python -m venv venv
-   
-   # En Windows
-   venv\Scripts\activate
-   
-   # En Linux/Mac
-   source venv/bin/activate
-   ```
+```bash
+# 1. Clonar
+git clone https://github.com/miguelcort/ia_repository.git
+cd ia_repository
 
-3. **Instalar dependencias**
-   ```bash
-   pip install -r requirements.txt
-   ```
+# 2. Crear entorno virtual
+python3 -m venv .venv
+source .venv/bin/activate     # macOS / Linux
+# .venv\Scripts\activate      # Windows
 
-4. **Iniciar Jupyter**
-   ```bash
-   jupyter notebook
-   ```
+# 3. Instalar dependencias
+pip install -r requirements.txt
 
-### Navegación
-Cada clase es independiente pero progresiva. Se recomienda seguir el orden establecido para un mejor aprovechamiento.
+# 4. Verificar
+python3 -c "import numpy, pandas, sklearn, torch; print('OK')"
 
----
+# 5. Lanzar Jupyter
+jupyter lab
+```
 
-## 🛠️ Tecnologías y Herramientas
+Más detalles: [GETTING_STARTED.md](./GETTING_STARTED.md).
 
-### Lenguajes y Frameworks
-- **Python**: Lenguaje principal
-- **TensorFlow/Keras**: Deep Learning
-- **PyTorch**: Deep Learning alternativo
-- **Scikit-learn**: ML clásico
+### Ruta de aprendizaje sugerida
 
-### Librerías de Datos
-- **NumPy**: Computación numérica
-- **Pandas**: Manipulación de datos
-- **Matplotlib/Seaborn**: Visualización
-- **Plotly**: Visualización interactiva
-
-### MLOps y Despliegue
-- **Docker**: Contenedorización
-- **MLflow**: Tracking de experimentos
-- **FastAPI**: APIs de modelos
-- **DVC**: Versionamiento de datos
+| Semanas | Foco | Fases |
+|---|---|---|
+| 1-2 | Setup + matemáticas | Fase 0, Fase 1 |
+| 3-4 | ML clásico | Fase 2 |
+| 5-6 | Deep Learning | Fase 3 |
+| 7-8 | Visión y RL | Fase 4, Fase 9 |
+| 9-10 | NLP y Transformers | Fase 5, Fase 7 |
+| 11-12 | LLMs | Fase 10, Fase 11 |
+| 13-14 | Generativa y multimodal | Fase 8, Fase 12 |
+| 15-16 | Agentes y herramientas | Fase 13, Fase 14 |
+| 17-18 | Producción y ética | Fase 17, Fase 18 |
+| 19-20 | Capstone | Fase 19 |
 
 ---
 
-## 📖 Recursos Adicionales
+## 🛠️ Tecnologías y herramientas
 
-### Documentación Oficial
-- [Scikit-learn](https://scikit-learn.org/)
-- [TensorFlow](https://www.tensorflow.org/)
-- [PyTorch](https://pytorch.org/)
-- [Pandas](https://pandas.pydata.org/)
+### Lenguajes y frameworks
+- **Python 3.10+** — Lenguaje principal.
+- **TypeScript, Rust, Julia** — Para lecciones específicas (siguiendo
+  el plan original).
 
-### Datasets
-- [Kaggle](https://www.kaggle.com/datasets)
-- [UCI ML Repository](https://archive.ics.uci.edu/ml/)
-- [Google Dataset Search](https://datasetsearch.research.google.com/)
-- [Datos Abiertos Colombia](https://www.datos.gov.co/)
+### Librerías núcleo
+- **NumPy, Pandas, SciPy** — Computación científica.
+- **scikit-learn, XGBoost, LightGBM** — ML clásico.
+- **PyTorch, TensorFlow/Keras** — Deep Learning.
+- **OpenCV, Pillow** — Visión por computador.
+- **Gymnasium** — Aprendizaje por refuerzo.
+- **Hugging Face Transformers / Datasets / PEFT** — LLMs.
 
-### Comunidades
-- [Stack Overflow](https://stackoverflow.com/questions/tagged/machine-learning)
-- [Kaggle Forums](https://www.kaggle.com/discussion)
-- [Reddit r/MachineLearning](https://www.reddit.com/r/MachineLearning/)
+### MLOps y despliegue
+- **Docker** — Contenerización.
+- **MLflow, DVC** — Tracking y versionamiento.
+- **FastAPI** — APIs de modelos.
+- **Optuna** — Ajuste de hiperparámetros.
+- **SHAP, LIME** — Explicabilidad.
 
 ---
 
-## 👥 Contribuciones
+## 🤝 Cómo contribuir
 
-Este repositorio está en constante evolución. Las contribuciones son bienvenidas:
+¡Las contribuciones son bienvenidas! Por favor lee
+[CONTRIBUTING.md](./CONTRIBUTING.md) y la
+[PLANTILLA_LECCION.md](./PLANTILLA_LECCION.md) antes de abrir un PR.
 
-1. Fork el repositorio
-2. Crea una rama para tu feature (`git checkout -b feature/mejora`)
-3. Commit tus cambios (`git commit -m 'Agregar mejora'`)
-4. Push a la rama (`git push origin feature/mejora`)
-5. Abre un Pull Request
+Reglas resumidas:
+
+- **Una lección = un commit.** Asunto: `feat(fase-NN/MM): <slug>`.
+- Documentación en `docs/es.md`, código en `code/main.<lang>`,
+  tests con 5+ casos en `code/tests/`.
+- Diagramas en Mermaid o SVG (nunca con caracteres Unicode).
+- No copies código de otros repos de currículo; cita papers, RFCs y
+  documentación oficial cuando sea el caso.
+
+---
+
+## 📂 Material heredado
+
+El material se construye lección por lección dentro de cada fase bajo
+`fases/NN-nombre/MM-slug/`. La estructura del repositorio se documenta
+en [ESTRUCTURA.md](./ESTRUCTURA.md).
+
+---
+
+## 🙏 Agradecimientos y atribuciones
+
+Este repositorio existe gracias a dos contribuciones:
+
+### 1. Plan de estudios original — **Rohit Ghumare**
+
+El currículo [**AI Engineering from
+Scratch**](https://github.com/rohitg00/ai-engineering-from-scratch) de
+**Rohit Ghumare** ([github.com/rohitg00](https://github.com/rohitg00))
+es la base pedagógica de este proyecto. 503 lecciones, 20 fases,
+cuatro lenguajes (Python, TypeScript, Rust, Julia), licencia MIT.
+
+- Repositorio: <https://github.com/rohitg00/ai-engineering-from-scratch>
+- Sitio web: <https://aiengineeringfromscratch.com>
+- Otro proyecto destacado del autor: [Agent Memory — #1 Persistent
+  Memory ⭐](https://github.com/rohitg00/agentmemory).
+
+> **Gracias, Rohit, por hacer accesible un plan completo de
+> ingeniería de IA bajo MIT.** Este trabajo en español no sería
+> posible sin tu generosidad.
+
+### 2. Adaptación al español — **Miguel Cortés** y la **Universidad Distrital**
+
+- **Adaptación, migración y traducción:** Miguel Cortés
+  ([@miguelcort](https://github.com/miguelcort)).
+- **Institución académica:** [Universidad Distrital Francisco José de
+  Caldas](https://www.udistrital.edu.co) — Diplomado en Machine Learning.
+- **Estudiantes y profesores** del Diplomado de la Universidad Distrital
+  que han iterado sobre el material y han inspirado la reorganización.
+
+La atribución detallada, con instrucciones de citación BibTeX y la
+relación de licencias, está en [CREDITS.md](./CREDITS.md).
 
 ---
 
 ## 📝 Licencia
 
-Este material es de uso académico para el diplomado de Machine Learning de la Universidad Distrital Francisco José de Caldas.
+- **Este repositorio:** MIT — ver [LICENSE](./LICENSE).
+- **Repositorio original (AI Engineering from Scratch):** MIT —
+  Copyright (c) Rohit Ghumare.
+
+El texto del MIT exige preservar el aviso de copyright y el permiso
+en todas las copias. Este README y [CREDITS.md](./CREDITS.md) cumplen
+con ese requisito.
 
 ---
 
 ## 📧 Contacto
 
-Para consultas sobre el diplomado:
-- **Universidad Distrital Francisco José de Caldas**
-- **Módulo**: Machine Learning y Ciencia de Datos
+- **Repositorio (issues, PRs):** <https://github.com/miguelcort/ia_repository>
+- **Repositorio original (issues, PRs):** <https://github.com/rohitg00/ai-engineering-from-scratch>
+- **Sitio web del autor original:** <https://aiengineeringfromscratch.com>
+- **Universidad Distrital:** <https://www.udistrital.edu.co>
 
 ---
 
-## ⭐ Agradecimientos
+## ⭐ Una última cosa
 
-A todos los estudiantes y profesores que contribuyen al desarrollo de este diplomado.
+Si este material te resulta útil, considera:
 
-**¡Éxitos en tu viaje por el mundo del Machine Learning! 🚀**
+- Darle una estrella al [repositorio
+  original](https://github.com/rohitg00/ai-engineering-from-scratch)
+  de Rohit Ghumare.
+- Darle una estrella a [este repositorio](https://github.com/miguelcort/ia_repository).
+- Contribuir con una nueva lección, traducción o corrección.
+
+**¡Éxitos en tu viaje por el mundo de la ingeniería de IA!** 🚀
