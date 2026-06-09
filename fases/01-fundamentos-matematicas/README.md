@@ -12,7 +12,7 @@
 | 06 | ✅ | Probabilidad y distribuciones | Aprender | Python |
 | 07 | ✅ | Teorema de Bayes y pensamiento estadístico | Construir | Python |
 | 08 | ✅ | Optimización: familia del descenso por gradiente | Construir | Python |
-| 09 | 🚧 | Teoría de la información: entropía, KL | Aprender | Python |
+| 09 | ✅ | Teoría de la información: entropía, KL | Aprender | Python |
 | 10 | 🚧 | Reducción de dimensionalidad: PCA, t-SNE, UMAP | Construir | Python |
 | 11 | 🚧 | Descomposición en valores singulares (SVD) | Construir | Python, Julia |
 | 12 | 🚧 | Operaciones con tensores | Construir | Python |
