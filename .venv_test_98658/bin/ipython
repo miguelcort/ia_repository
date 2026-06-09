@@ -1,0 +1,6 @@
+#!/Users/miguelcortes/macMini/repo_distrital/ia_repository/.venv_test_98658/bin/python3
+import sys
+from IPython import start_ipython
+if __name__ == '__main__':
+    sys.argv[0] = sys.argv[0].removesuffix('.exe')
+    sys.exit(start_ipython())
