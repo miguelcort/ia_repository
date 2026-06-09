@@ -11,7 +11,7 @@
 | 05 | ✅ | Jupyter Notebooks | Construir | Python |
 | 06 | ✅ | Entornos virtuales de Python | Construir | Bash |
 | 07 | ✅ | Docker para IA | Construir | Docker |
-| 08 | 🚧 | Configuración del editor (VS Code) | Construir | — |
+| 08 | ✅ | Configuración del editor (VS Code) | Construir | Python |
 | 09 | 🚧 | Gestión de datos | Construir | Python |
 | 10 | 🚧 | Terminal y shell | Aprender | Bash |
 | 11 | 🚧 | Linux para IA | Aprender | Bash |
