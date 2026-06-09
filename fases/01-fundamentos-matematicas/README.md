@@ -4,7 +4,7 @@
 
 | # | Estado | Lección | Tipo | Lenguaje |
 |:--:|:--:|---|:--:|---|
-| 01 | 🚧 | Intuición de álgebra lineal | Aprender | Python, Julia |
+| 01 | ✅ | Intuición de álgebra lineal | Aprender | Python |
 | 02 | 🚧 | Vectores, matrices y operaciones | Construir | Python, Julia |
 | 03 | 🚧 | Transformaciones y valores propios | Construir | Python, Julia |
 | 04 | 🚧 | Cálculo para ML: derivadas y gradientes | Aprender | Python |
