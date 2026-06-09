@@ -196,7 +196,66 @@ def main(argv: list[str] | None = None) -> int:
         else:
             print(f"  → {archivo.name}: {cambios} filas cambiadas (no se escribió, use --write)")
 
-    return 0 if cambios_total == 0 or args.write else 1
+    cambios_fases = actualizar_leyendas_de_fase(conteo, write=args.write)
+    if args.write:
+        print(f"  → leyendas de fase: {cambios_fases} actualizadas")
+    else:
+        print(f"  → leyendas de fase: {cambios_fases} cambiadas (use --write)")
+
+    return 0 if (cambios_total == 0 and cambios_fases == 0) or args.write else 1
+
+
+def actualizar_leyendas_de_fase(conteo: dict[int, int], *, write: bool) -> int:
+    """Actualiza la columna `Estado` de las tablas de lecciones dentro de
+    cada README de fase: ✅ si la lección tiene carpeta en disco,
+    🚧 en caso contrario. La columna objetivo es la segunda (índice 1)."""
+    cambios = 0
+    for fase_dir in sorted(FASES.iterdir()):
+        m = FASE_ID.match(fase_dir.name)
+        if not m:
+            continue
+        fase_num = int(m.group(1))
+        readme = fase_dir / "README.md"
+        if not readme.exists():
+            continue
+        existentes = {p.name for p in lecciones_de_fase(fase_dir)}
+        texto = readme.read_text(encoding="utf-8")
+        lineas = texto.splitlines()
+        nuevas: list[str] = []
+        en_tabla = False
+        for linea in lineas:
+            if "| # |" in linea and "Lección" in linea:
+                en_tabla = True
+                nuevas.append(linea)
+                continue
+            if en_tabla and linea.startswith("|---"):
+                nuevas.append(linea)
+                continue
+            if en_tabla and not linea.startswith("|"):
+                en_tabla = False
+                nuevas.append(linea)
+                continue
+            if en_tabla and linea.startswith("|"):
+                celdas = [c.strip() for c in linea.strip("|").split("|")]
+                if len(celdas) < 2:
+                    nuevas.append(linea)
+                    continue
+                m2 = LECCION_ID.match(celdas[0])
+                if not m2:
+                    nuevas.append(linea)
+                    continue
+                lec_slug = m2.group(0) + "-"
+                glyph = "✅" if any(name.startswith(lec_slug) for name in existentes) else "🚧"
+                celdas[1] = glyph
+                nueva = "| " + " | ".join(celdas) + " |"
+                if nueva != linea:
+                    cambios += 1
+                nuevas.append(nueva)
+            else:
+                nuevas.append(linea)
+        if write and nuevas != lineas:
+            readme.write_text("\n".join(nuevas) + "\n", encoding="utf-8")
+    return cambios
 
 
 if __name__ == "__main__":

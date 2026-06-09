@@ -34,6 +34,14 @@ repos:
         types: [markdown]
         stages: [pre-commit]
 
+      - id: probar-lecciones
+        name: Ejecutar tests de las lecciones modificadas
+        entry: python3 scripts/probar_lecciones.py --quiet
+        language: system
+        pass_filenames: false
+        types: [python]
+        stages: [pre-commit]
+
   - repo: https://github.com/pre-commit/pre-commit-hooks
     rev: v4.6.0
     hooks:

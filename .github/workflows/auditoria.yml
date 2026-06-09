@@ -34,6 +34,25 @@ jobs:
       - name: Detectar referencias rotas
         run: python3 scripts/validar_enlaces.py
 
+  pruebas:
+    name: Ejecutar tests de las lecciones
+    needs: auditoria
+    runs-on: ubuntu-latest
+    steps:
+      - name: Clonar repositorio
+        uses: actions/checkout@v4
+
+      - name: Configurar Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Instalar dependencias mínimas
+        run: pip install numpy pytest
+
+      - name: Probar todas las lecciones
+        run: python3 scripts/probar_lecciones.py --quiet
+
   conteo:
     name: Sincronizar conteo de lecciones (solo main)
     needs: auditoria
