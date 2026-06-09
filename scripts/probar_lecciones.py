@@ -26,7 +26,7 @@ from pathlib import Path
 
 RAIZ = Path(__file__).resolve().parent.parent
 FASES = RAIZ / "fases"
-TIMEOUT = 30  # segundos por lección
+TIMEOUT = 120  # segundos por lección (algunos tests crean venv)
 
 
 def lecciones_objetivo(args: argparse.Namespace) -> list[Path]:
@@ -66,7 +66,7 @@ def _tiene_tests(leccion: Path) -> bool:
     return False
 
 
-def probar_leccion(leccion: Path) -> tuple[str, float, str]:
+def probar_leccion(leccion: Path, timeout: int = TIMEOUT) -> tuple[str, float, str]:
     """Ejecuta los tests de una lección. Devuelve (estado, duracion, salida)."""
     inicio = time.time()
     tests_dir = leccion / "code" / "tests"
@@ -76,10 +76,10 @@ def probar_leccion(leccion: Path) -> tuple[str, float, str]:
     cmd, cwd = runner
     try:
         resultado = subprocess.run(
-            cmd, cwd=cwd, capture_output=True, text=True, timeout=TIMEOUT
+            cmd, cwd=cwd, capture_output=True, text=True, timeout=timeout
         )
     except subprocess.TimeoutExpired:
-        return ("TIMEOUT", time.time() - inicio, f"Timeout después de {TIMEOUT}s")
+        return ("TIMEOUT", time.time() - inicio, f"Timeout después de {timeout}s")
     salida = (resultado.stdout + resultado.stderr).strip()
     estado = "OK" if resultado.returncode == 0 else f"FAIL({resultado.returncode})"
     return (estado, time.time() - inicio, salida)
@@ -105,6 +105,7 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("rutas", nargs="*", help="Rutas específicas a probar.")
     parser.add_argument("--json", action="store_true", help="Salida en JSON.")
     parser.add_argument("--quiet", action="store_true", help="No imprimir la salida de cada test.")
+    parser.add_argument("--timeout", type=int, default=TIMEOUT, help="Timeout por leccion en segundos.")
     args = parser.parse_args(argv)
 
     lecciones = lecciones_objetivo(args)
@@ -118,7 +119,7 @@ def main(argv: list[str] | None = None) -> int:
     resultados: list[dict] = []
     ok = 0
     for lec in lecciones:
-        estado, duracion, salida = probar_leccion(lec)
+        estado, duracion, salida = probar_leccion(lec, timeout=args.timeout)
         slug = lec.relative_to(RAIZ).as_posix()
         resultados.append({"leccion": slug, "estado": estado, "duracion_s": round(duracion, 2)})
         if estado == "OK":
