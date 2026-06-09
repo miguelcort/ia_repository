@@ -17,8 +17,8 @@
 | 11 | ✅ | Descomposición en valores singulares (SVD) | Construir | Python |
 | 12 | ✅ | Operaciones con tensores | Construir | Python |
 | 13 | ✅ | Estabilidad numérica | Construir | Python |
-| 14 | 🚧 | Normas y distancias | Construir | Python |
-| 15 | 🚧 | Estadística para ML | Construir | Python |
+| 14 | ✅ | Normas y distancias | Construir | Python |
+| 15 | ✅ | Estadística para ML | Construir | Python |
 | 16 | 🚧 | Métodos de muestreo | Construir | Python |
 | 17 | 🚧 | Sistemas lineales | Construir | Python |
 | 18 | 🚧 | Optimización convexa | Construir | Python |
