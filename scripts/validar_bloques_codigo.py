@@ -25,7 +25,7 @@ from typing import Iterable
 
 RAIZ = Path(__file__).resolve().parent.parent
 
-EXCLUIR_DIRS = {".git", ".venv", "venv", "node_modules", "__pycache__", "outputs", "datasets"}
+EXCLUIR_DIRS = {".git", ".venv", "venv", "node_modules", "__pycache__", "outputs", "datasets", ".venv_test_*", "lib", "site-packages"}
 EXCLUIR_ENLACES = ("blob/", "tree/", "raw/", "/pull/", "/issues/")
 
 FENCE_APERTURA = re.compile(r"^(\s*)```([^\s`].*)?$")
@@ -39,10 +39,12 @@ CAR_UNICODE_DIAG = "─│┌┐└┘├┤┬┴┼═║╔╗╚╝╠╣╦
 def archivos_md(ruta: Path) -> list[Path]:
     if ruta.is_file():
         return [ruta]
-    return sorted(
-        p for p in ruta.rglob("*.md")
-        if not any(seg in EXCLUIR_DIRS for seg in p.parts)
-    )
+    out: list[Path] = []
+    for p in ruta.rglob("*.md"):
+        if any(seg in EXCLUIR_DIRS or seg.startswith(".venv_test") for seg in p.parts):
+            continue
+        out.append(p)
+    return sorted(out)
 
 
 def es_fence_arbol(lineas: list[str], inicio: int, fin: int) -> bool:
@@ -139,25 +141,31 @@ def validar_enlaces(archivo: Path) -> list[dict]:
     except (OSError, UnicodeDecodeError):
         return problemas
 
-    for patron, grupo in [(ENLACE_MD, 2), (ENLACE_ANG, 1)]:
-        for m in patron.finditer(texto):
-            url = m.group(grupo)
-            if url.startswith(("http://", "https://", "mailto:", "#")):
-                continue
-            if any(seg in url for seg in EXCLUIR_ENLACES):
-                continue
-            url = url.split("#", 1)[0].split("?", 1)[0]
-            if not url:
-                continue
-            objetivo = (archivo.parent / url).resolve()
-            if not objetivo.exists():
-                n_linea = texto[: m.start()].count("\n") + 1
-                problemas.append({
-                    "archivo": str(archivo.relative_to(RAIZ)),
-                    "linea": n_linea,
-                    "tipo": "enlace_roto",
-                    "mensaje": f"Enlace roto: {url}",
-                })
+    en_codigo = False
+    for n_linea_actual, linea in enumerate(texto.splitlines(), 1):
+        if FENCE_APERTURA.match(linea):
+            en_codigo = not en_codigo
+            continue
+        if en_codigo:
+            continue
+        for patron, grupo in [(ENLACE_MD, 2), (ENLACE_ANG, 1)]:
+            for m in patron.finditer(linea):
+                url = m.group(grupo)
+                if url.startswith(("http://", "https://", "mailto:", "#")):
+                    continue
+                if any(seg in url for seg in EXCLUIR_ENLACES):
+                    continue
+                url = url.split("#", 1)[0].split("?", 1)[0]
+                if not url:
+                    continue
+                objetivo = (archivo.parent / url).resolve()
+                if not objetivo.exists():
+                    problemas.append({
+                        "archivo": str(archivo.relative_to(RAIZ)),
+                        "linea": n_linea_actual,
+                        "tipo": "enlace_roto",
+                        "mensaje": f"Enlace roto: {url}",
+                    })
     return problemas
 
 
