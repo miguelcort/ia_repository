@@ -45,33 +45,58 @@ def lecciones_objetivo(args: argparse.Namespace) -> list[Path]:
         for f in FASES.iterdir():
             if f.name.startswith(f"{int(args.fase):02d}-"):
                 for l in f.iterdir():
-                    if (l / "code" / "tests" / "test_main.py").exists():
+                    if _tiene_tests(l):
                         out.append(l)
         return sorted(out)
     out = []
     for f in FASES.iterdir():
         for l in f.iterdir():
-            if l.is_dir() and (l / "code" / "tests" / "test_main.py").exists():
+            if l.is_dir() and _tiene_tests(l):
                 out.append(l)
     return sorted(out)
+
+
+def _tiene_tests(leccion: Path) -> bool:
+    tests_dir = leccion / "code" / "tests"
+    if not tests_dir.exists():
+        return False
+    for patron in ("test_main.py", "test_main.sh", "test_*.py", "test_*.sh"):
+        if list(tests_dir.glob(patron)):
+            return True
+    return False
 
 
 def probar_leccion(leccion: Path) -> tuple[str, float, str]:
     """Ejecuta los tests de una lección. Devuelve (estado, duracion, salida)."""
     inicio = time.time()
+    tests_dir = leccion / "code" / "tests"
+    runner = _detectar_runner(tests_dir)
+    if runner is None:
+        return ("SKIP", 0.0, "no se detectó runner")
+    cmd, cwd = runner
     try:
         resultado = subprocess.run(
-            [sys.executable, "-m", "unittest", "discover", "-s", "tests", "-v"],
-            cwd=leccion / "code",
-            capture_output=True,
-            text=True,
-            timeout=TIMEOUT,
+            cmd, cwd=cwd, capture_output=True, text=True, timeout=TIMEOUT
         )
     except subprocess.TimeoutExpired:
         return ("TIMEOUT", time.time() - inicio, f"Timeout después de {TIMEOUT}s")
     salida = (resultado.stdout + resultado.stderr).strip()
     estado = "OK" if resultado.returncode == 0 else f"FAIL({resultado.returncode})"
     return (estado, time.time() - inicio, salida)
+
+
+def _detectar_runner(tests_dir: Path) -> tuple[list[str], Path] | None:
+    """Devuelve (comando, cwd) apropiado para los tests, o None si no hay."""
+    code_dir = tests_dir.parent
+    if list(tests_dir.glob("test_main.py")) or list(tests_dir.glob("test_*.py")):
+        return (
+            [sys.executable, "-m", "unittest", "discover", "-s", "tests", "-v"],
+            code_dir,
+        )
+    sh_tests = list(tests_dir.glob("test_main.sh")) + list(tests_dir.glob("test_*.sh"))
+    if sh_tests:
+        return (["bash", str(sh_tests[0])], code_dir)
+    return None
 
 
 def main(argv: list[str] | None = None) -> int:

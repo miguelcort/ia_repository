@@ -5,7 +5,7 @@
 | # | Estado | Lección | Tipo | Lenguaje |
 |:--:|:--:|---|:--:|---|
 | 01 | ✅ | Entorno de desarrollo | Construir | Python |
-| 02 | 🚧 | Git y colaboración | Aprender | — |
+| 02 | ✅ | Git y colaboración | Aprender | Bash |
 | 03 | 🚧 | Configuración de GPU y nube | Construir | Python |
 | 04 | 🚧 | APIs y claves | Construir | Python |
 | 05 | 🚧 | Jupyter Notebooks | Construir | Python |
