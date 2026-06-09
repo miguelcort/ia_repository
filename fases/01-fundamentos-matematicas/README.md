@@ -9,7 +9,7 @@
 | 03 | ✅ | Transformaciones y valores propios | Construir | Python |
 | 04 | ✅ | Cálculo para ML: derivadas y gradientes | Construir | Python |
 | 05 | ✅ | Regla de la cadena y diferenciación automática | Construir | Python |
-| 06 | 🚧 | Probabilidad y distribuciones | Aprender | Python |
+| 06 | ✅ | Probabilidad y distribuciones | Aprender | Python |
 | 07 | 🚧 | Teorema de Bayes y pensamiento estadístico | Construir | Python |
 | 08 | 🚧 | Optimización: familia del descenso por gradiente | Construir | Python |
 | 09 | 🚧 | Teoría de la información: entropía, KL | Aprender | Python |
