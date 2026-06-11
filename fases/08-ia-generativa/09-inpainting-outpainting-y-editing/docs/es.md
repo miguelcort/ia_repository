@@ -46,5 +46,5 @@
 > "[Inpainting outpainting y edicion]" del currículo
 > [AI Engineering from Scratch](https://github.com/rohitg00/ai-engineering-from-scratch)
 > (Rohit Ghumare, MIT). Implementación y documentación reescritas
-> desde cero. Ver [CREDITS.md](../../../CREDITS.md).
+> desde cero. Ver [CREDITS.md](../../../../CREDITS.md).
 
