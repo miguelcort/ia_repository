@@ -52,7 +52,7 @@ Fase 19  ─ Proyectos capstone
 | 3 | Núcleo de Deep Learning | `03-nucleo-deep-learning` | 13 | ✅ |
 | 4 | Visión por computador | `04-vision-por-computador` | 28 | ✅ |
 | 5 | NLP | `05-nlp-fundamentos-a-avanzado` | 29 | ✅ |
-| 6 | Voz y audio | `06-voz-y-audio` | 17 | ⬚ |
+| 6 | Voz y audio | `06-voz-y-audio` | 17 | ✅ |
 | 7 | Transformers a fondo | `07-transformers-a-fondo` | 16 | ⬚ |
 | 8 | IA generativa | `08-ia-generativa` | 15 | ⬚ |
 | 9 | Aprendizaje por refuerzo | `09-aprendizaje-por-refuerzo` | 12 | ⬚ |
