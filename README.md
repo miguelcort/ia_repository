@@ -47,7 +47,7 @@ Este repositorio **no es un clon** del repo original. Es una
 | 9 | Aprendizaje por refuerzo | `09-aprendizaje-por-refuerzo` | 12 | ✅ |
 | 10 | LLMs desde cero | `10-llms-desde-cero` | 25 | 🚧 |
 | 11 | Ingeniería de LLMs | `11-ingenieria-llms` | 17 | ✅ |
-| 12 | IA multimodal | `12-ia-multimodal` | 25 | ⬚ |
+| 12 | IA multimodal | `12-ia-multimodal` | 25 | ✅ |
 | 13 | Herramientas y protocolos | `13-herramientas-y-protocolos` | 23 | ⬚ |
 | 14 | Ingeniería de agentes | `14-ingenieria-agentes` | 42 | ⬚ |
 | 15 | Sistemas autónomos | `15-sistemas-autonomos` | — | ⬚ |
