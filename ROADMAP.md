@@ -55,7 +55,7 @@ Fase 19  ─ Proyectos capstone
 | 6 | Voz y audio | `06-voz-y-audio` | 17 | ✅ |
 | 7 | Transformers a fondo | `07-transformers-a-fondo` | 16 | ✅ |
 | 8 | IA generativa | `08-ia-generativa` | 15 | ✅ |
-| 9 | Aprendizaje por refuerzo | `09-aprendizaje-por-refuerzo` | 12 | ⬚ |
+| 9 | Aprendizaje por refuerzo | `09-aprendizaje-por-refuerzo` | 12 | ✅ |
 | 10 | LLMs desde cero | `10-llms-desde-cero` | 25 | ⬚ |
 | 11 | Ingeniería de LLMs | `11-ingenieria-llms` | 17 | ⬚ |
 | 12 | IA multimodal | `12-ia-multimodal` | 25 | ⬚ |
