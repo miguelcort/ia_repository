@@ -1,0 +1,14 @@
+# Vision en tiempo real en el borde
+
+Cuantizacion int8, FLOPs, FPS, tamano de modelo:
+
+```bash
+cd code
+python3 main.py
+```
+
+Ejecuta los tests:
+
+```bash
+python3 -m unittest discover -s tests -v
+```
