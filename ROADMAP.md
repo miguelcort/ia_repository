@@ -60,12 +60,12 @@ Fase 19  ─ Proyectos capstone
 | 11 | Ingeniería de LLMs | `11-ingenieria-llms` | 17 | ✅ |
 | 12 | IA multimodal | `12-ia-multimodal` | 25 | ✅ |
 | 13 | Herramientas y protocolos | `13-herramientas-y-protocolos` | 23 | ✅ |
-| 14 | Ingeniería de agentes | `14-ingenieria-agentes` | 42 | 🚧 |
+| 14 | Ingeniería de agentes | `14-ingenieria-agentes` | 42 | ✅ |
 | 15 | Sistemas autónomos | `15-sistemas-autonomos` | — | 🚧 |
-| 16 | Multi-agente y enjambres | `16-multi-agente-y-enjambres` | — | ⬚ |
-| 17 | Infraestructura y producción | `17-infraestructura-y-produccion` | — | ⬚ |
-| 18 | Ética y alineación | `18-etica-y-alineacion` | — | ⬚ |
-| 19 | Proyectos capstone | `19-proyectos-capstone` | — | ⬚ |
+| 16 | Multi-agente y enjambres | `16-multi-agente-y-enjambres` | — | 🚧 |
+| 17 | Infraestructura y producción | `17-infraestructura-y-produccion` | — | 🚧 |
+| 18 | Ética y alineación | `18-etica-y-alineacion` | — | 🚧 |
+| 19 | Proyectos capstone | `19-proyectos-capstone` | — | 🚧 |
 
 El conteo exacto de lecciones por fase lo calcula automáticamente
 `scripts/actualizar_conteo.py` a partir de las carpetas creadas.
