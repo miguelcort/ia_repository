@@ -49,12 +49,12 @@ Este repositorio **no es un clon** del repo original. Es una
 | 11 | Ingeniería de LLMs | `11-ingenieria-llms` | 17 | ✅ |
 | 12 | IA multimodal | `12-ia-multimodal` | 25 | ✅ |
 | 13 | Herramientas y protocolos | `13-herramientas-y-protocolos` | 23 | ✅ |
-| 14 | Ingeniería de agentes | `14-ingenieria-agentes` | 42 | 🚧 |
-| 15 | Sistemas autónomos | `15-sistemas-autonomos` | — | 🚧 |
-| 16 | Multi-agente y enjambres | `16-multi-agente-y-enjambres` | — | ⬚ |
-| 17 | Infraestructura y producción | `17-infraestructura-y-produccion` | — | ⬚ |
-| 18 | Ética y alineación | `18-etica-y-alineacion` | — | ⬚ |
-| 19 | Proyectos capstone | `19-proyectos-capstone` | — | ⬚ |
+| 14 | Ingeniería de agentes | `14-ingenieria-agentes` | 42 | ✅ |
+| 15 | Sistemas autónomos | `15-sistemas-autonomos` | 22 | ✅ |
+| 16 | Multi-agente y enjambres | `16-multi-agente-y-enjambres` | 25 | ✅ |
+| 17 | Infraestructura y producción | `17-infraestructura-y-produccion` | 28 | ✅ |
+| 18 | Ética y alineación | `18-etica-y-alineacion` | — | 🚧 |
+| 19 | Proyectos capstone | `19-proyectos-capstone` | — | 🚧 |
 
 > ✅ Completa · 🚧 En construcción · ⬚ Pendiente.
 > Detalle por fase: [ROADMAP.md](./ROADMAP.md).
