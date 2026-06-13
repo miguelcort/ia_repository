@@ -2,7 +2,7 @@
 
 > ML clásico: la columna vertebral de la mayor parte de la IA en producción.
 
-Esta fase es el hogar del material de las clases 1, 2 y 3 del Diplomado
+Esta fase es el hogar del material de las clases 1, 2 y 3 del currículo
 original: regresión lineal y logística, árboles, SVM, clustering, feature
 engineering, evaluación y ensembles.
 
@@ -37,7 +37,7 @@ engineering, evaluación y ensembles.
 Las lecciones de esta fase cubren regresión, clasificación, clustering,
 ingeniería de *features*, evaluación y *ensembles*. Reemplazan el
 material introductorio y de modelos clásicos que antes se veía al
-comienzo del diplomado.
+comienzo del currículo.
 
 ## Objetivos de la fase
 

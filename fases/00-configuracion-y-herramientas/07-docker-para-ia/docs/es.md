@@ -37,7 +37,7 @@ Dockerfile (`FROM`, `RUN`, `COPY`) crea una capa. Docker cachea las
 capas: si solo cambia tu codigo, las capas de dependencias se
 reutilizan y el rebuild es segundos.
 
-La convencion del diplomado:
+La convencion del currículo:
 
 - **Multi-stage** para reducir tamano: builder + runtime.
 - **Usuario no-root** en runtime por seguridad.

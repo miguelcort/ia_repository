@@ -3,7 +3,7 @@
 > La base de RLHF y los agentes que juegan.
 
 Esta fase recibe el material de la *Clase 6: Aprendizaje por Refuerzo*
-del Diplomado original. Cubre MDPs, programación dinámica, Monte Carlo,
+del currículo original. Cubre MDPs, programación dinámica, Monte Carlo,
 Q-learning, DQN, Policy Gradients, PPO y RLHF.
 
 | # | Estado | Lección | Tipo | Lenguaje |
@@ -28,7 +28,7 @@ Q-learning, DQN, Policy Gradients, PPO y RLHF.
 ## Material de referencia
 
 Las lecciones de esta fase reemplazan el material de aprendizaje por
-refuerzo del diplomado original. Cubren MDPs, programación dinámica,
+refuerzo del currículo original. Cubren MDPs, programación dinámica,
 Monte Carlo, Q-learning, DQN, *policy gradients*, PPO y RLHF.
 
 ## Objetivos de la fase

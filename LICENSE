@@ -1,7 +1,7 @@
 MIT License
 
-Copyright (c) 2024-2026 Universidad Distrital Francisco José de Caldas
-                      — Diplomado Machine Learning
+Copyright (c) 2024-2026 Miguel Cortés
+                      — Currículo de Ingeniería de IA en español
 
 Adaptación al español del currículo
 "AI Engineering from Scratch" de Rohit Ghumare, Copyright (c) Rohit Ghumare.
@@ -28,10 +28,10 @@ SOFTWARE.
 
 ## Nota Académica
 
-Este repositorio es material educativo del Diplomado en Machine Learning
-de la Universidad Distrital Francisco José de Caldas, en su adaptación
-al español del currículo AI Engineering from Scratch. Está destinado
-para fines académicos y de aprendizaje.
+Este repositorio es material educativo del currículo de **Ingeniería de IA
+en español** mantenido por **Miguel Cortés**, en su adaptación al español
+del currículo AI Engineering from Scratch. Está destinado para fines
+académicos y de aprendizaje.
 
 ### Material de terceros
 
@@ -52,4 +52,3 @@ para fines académicos y de aprendizaje.
 |---|---|---|
 | Autor del currículo original (inglés) | Rohit Ghumare | Plan de estudios, código, redacción en inglés |
 | Adaptación al español y migración | Miguel Cortés | Traducción, reorganización, mantenimiento |
-| Institución académica | Universidad Distrital Francisco José de Caldas | Espacio, estudiantes, validación pedagógica |

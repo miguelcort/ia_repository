@@ -33,7 +33,7 @@ de notebook a script cuando algo se vuelve definitivo.
 
 ## El concepto
 
-Un notebook tiene tres tipos de celda. La convencion del diplomado:
+Un notebook tiene tres tipos de celda. La convencion del currículo:
 
 1. **Celda 1 — imports**: solo imports, una linea por libreria.
 2. **Celda 2 — configuracion**: paths, semillas aleatorias, settings.
@@ -56,7 +56,7 @@ sino un script. Conviertelo.
 ## Constrúyelo
 
 Implementamos un verificador de notebooks en Python: dado un archivo
-`.ipynb`, valida la convencion del diplomado.
+`.ipynb`, valida la convencion del currículo.
 
 ```python
 """
@@ -153,7 +153,7 @@ if __name__ == "__main__":
 # Crear un notebook narrativo con jupyter lab
 jupyter lab
 
-# Validar la convencion del diplomado
+# Validar la convencion del currículo
 python3 code/main.py mi_experimento.ipynb
 ```
 

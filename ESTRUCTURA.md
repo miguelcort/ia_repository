@@ -18,7 +18,7 @@ ia_repository/
 ├── ROADMAP.md                        # Estado de las 20 fases
 ├── CREDITS.md                        # Atribuciones y licencias
 ├── CONTRIBUTING.md                   # Cómo contribuir
-├── LICENSE                           # MIT — Universidad Distrital + crédito a Rohit
+├── LICENSE                           # MIT — Miguel Cortés + crédito a Rohit
 ├── GETTING_STARTED.md                # Guía rápida de instalación
 ├── PLANTILLA_LECCION.md              # Plantilla canónica de una lección
 ├── ESTRUCTURA.md                     # Este archivo
@@ -122,10 +122,10 @@ DESPLEGAR    prompt, skill, agente o servidor MCP reutilizable
 
 ---
 
-## Cómo encaja con la Universidad Distrital
+## Cómo encaja con el plan de estudios
 
-El Diplomado se entrega como un currículo continuo de 20 fases. Los
-bloques temáticos tradicionales se mapean así:
+El currículo se entrega como un plan continuo de 20 fases. Los bloques
+temáticos tradicionales se mapean así:
 
 | Bloque temático | Fases destino |
 |---|---|

@@ -13,7 +13,7 @@
 - Aplicar el flujo `add → commit → push` con mensajes convencionales.
 - Trabajar con ramas, fusiones y resolución de conflictos simples.
 - Diagnosticar el estado de un repositorio con `git status`, `git log` y `git diff`.
-- Aplicar las reglas del diplomado: un commit por lección, asunto de 72 caracteres.
+- Aplicar las reglas del currículo: un commit por lección, asunto de 72 caracteres.
 
 ## El problema
 
@@ -22,7 +22,7 @@ Eso funciona hasta que introduces un bug y no recuerdas qué version
 funcionaba. Git resuelve eso: cada commit es una foto inmutable de tu
 trabajo, con un autor, fecha y mensaje.
 
-En el diplomado, además, necesitamos un formato estricto de commits
+En el currículo, además, necesitamos un formato estricto de commits
 para que la historia del repositorio sea legible y automatizable.
 Por eso esta lección no es opcional: la vamos a aplicar desde la
 primera línea de código que escribas.
@@ -58,7 +58,7 @@ gitGraph
 
 ## Constrúyelo
 
-Construimos un script Bash que aplica la convención del diplomado a
+Construimos un script Bash que aplica la convención del currículo a
 cualquier repo:
 
 ```bash

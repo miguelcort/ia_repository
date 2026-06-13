@@ -1,9 +1,8 @@
 # Guía de Contribución
 
-¡Gracias por tu interés en contribuir al repositorio del Diplomado en
-Machine Learning de la **Universidad Distrital Francisco José de
-Caldas**, en su versión en español del currículo
-[AI Engineering from
+¡Gracias por tu interés en contribuir al repositorio del currículo
+de **Ingeniería de IA en español** mantenido por **Miguel Cortés**,
+basado en [AI Engineering from
 Scratch](https://github.com/rohitg00/ai-engineering-from-scratch) de
 Rohit Ghumare!
 

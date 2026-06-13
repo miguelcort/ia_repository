@@ -2,9 +2,8 @@
 
 ## Nuestro compromiso
 
-En el **Diplomado en Machine Learning de la Universidad Distrital
-Francisco José de Caldas** y en su versión en español del currículo
-[AI Engineering from
+En el currículo de **Ingeniería de IA en español** mantenido por
+**Miguel Cortés**, basado en [AI Engineering from
 Scratch](https://github.com/rohitg00/ai-engineering-from-scratch) de
 Rohit Ghumare, nos comprometemos a ofrecer un ambiente de aprendizaje
 inclusivo, respetuoso y libre de acoso para todas las personas,

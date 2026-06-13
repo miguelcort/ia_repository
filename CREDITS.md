@@ -3,9 +3,9 @@
 Este repositorio (`ia_repository`) es una **adaptación al español** del currículo
 **[AI Engineering from Scratch](https://github.com/rohitg00/ai-engineering-from-scratch)**
 de **Rohit Ghumare** (`@rohitg00`), publicada bajo la licencia MIT. El trabajo
-opcional de migración, traducción y reorganización lo realiza
-**Miguel Cortés** para el **Diplomado en Machine Learning** de la
-**Universidad Distrital Francisco José de Caldas**.
+de migración, traducción y reorganización al español es mantenido por
+**Miguel Cortés** como un currículo personal de **Ingeniería de IA**
+basado en dicho material original.
 
 ---
 
@@ -15,8 +15,7 @@ opcional de migración, traducción y reorganización lo realiza
 |---|---|---|
 | Autor original del currículo en inglés | **Rohit Ghumare** ([github.com/rohitg00](https://github.com/rohitg00)) | Diseño pedagógico, plan de estudios, código de las 503 lecciones, redacción en inglés, sitio web [aiengineeringfromscratch.com](https://aiengineeringfromscratch.com) |
 | Creador de *Agent Memory* | Rohit Ghumare | Repositorio [#1 en memoria persistente para agentes](https://github.com/rohitg00/agentmemory) citado en la cabecera del repo original |
-| Adaptación, traducción y migración al español | **Miguel Cortés** | Reorganización del plan del diplomado como *fases* dentro del esquema de 20, traducción de los README, plantillas y documentación, mantenimiento de la nomenclatura para la Universidad Distrital |
-| Institución académica | **Universidad Distrital Francisco José de Caldas** — Diplomado en Machine Learning | Espacio institucional, estudiantes, profesores y validación pedagógica del material en español |
+| Adaptación, traducción, migración y mantenimiento al español | **Miguel Cortés** | Reorganización del plan como *fases* dentro del esquema de 20, traducción de los README, plantillas y documentación, mantenimiento general del repositorio |
 
 ---
 
@@ -42,11 +41,11 @@ opcional de migración, traducción y reorganización lo realiza
    `LESSON_TEMPLATE.md` y `CONTRIBUTING.md` del repo original, adaptados a
    español.
 4. **Código.** El código de cada lección del repo original **no se copia**.
-   Las fases que cubrían temas ya presentes en el plan original del
-   Diplomado de la Universidad Distrital usan su
-   propio material (notebooks y scripts `.py`). Las fases nuevas (0, 1, 5, 6,
-   7, 8, 10-19) se dejan como *esqueleto* listo para que estudiantes y
-   profesores las llenen — sin duplicar el trabajo previo de Rohit.
+   Las fases que cubrían temas ya presentes en el material propio de
+   Miguel Cortés usan su propio material (notebooks y scripts `.py`).
+   Las fases nuevas (0, 1, 5, 6, 7, 8, 10-19) se dejan como *esqueleto*
+   listo para que la comunidad las llene — sin duplicar el trabajo previo
+   de Rohit.
 
 ### Lo que este repositorio **no** hace
 
@@ -66,7 +65,7 @@ opcional de migración, traducción y reorganización lo realiza
 - **Este repositorio:** MIT — ver [LICENSE](./LICENSE).
 - **Repositorio original (AI Engineering from Scratch):** MIT —
   Copyright (c) Rohit Ghumare.
-- **Material propio de la Universidad Distrital:** MIT, mismo archivo
+- **Material propio de Miguel Cortés:** MIT, mismo archivo
   [LICENSE](./LICENSE) cubre la adaptación.
 
 El texto del MIT exige conservar el aviso de copyright y de permiso en
@@ -91,8 +90,7 @@ trabajos:
 
 @misc{cortes2026ia_repository,
   author       = {Miguel Cortés},
-  title        = {ia\_repository — Diplomado en Machine Learning,
-                  Universidad Distrital Francisco José de Caldas},
+  title        = {ia\_repository — Currículo de Ingeniería de IA en español},
   year         = {2026},
   howpublished = {\url{https://github.com/miguelcort/ia_repository}},
   note         = {Adaptación al español de AI Engineering from Scratch.
@@ -105,7 +103,7 @@ trabajos:
 ## Contacto
 
 - **Repositorio original:** <https://github.com/rohitg00/ai-engineering-from-scratch/issues>
-- **Adaptación al español (Universidad Distrital):** issues y PRs en este
+- **Adaptación al español (Miguel Cortés):** issues y PRs en este
   repositorio.
 - **Sitio web del autor original:** <https://aiengineeringfromscratch.com>
 

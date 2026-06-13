@@ -27,8 +27,8 @@
 
 ## Material original
 
-Esta fase es nueva en el plan de la Universidad Distrital. La base
-pedagógica proviene del plan de estudios
+Esta fase es nueva en el plan de estudios mantenido por Miguel Cortés.
+La base pedagógica proviene del currículo
 [AI Engineering from Scratch](https://github.com/rohitg00/ai-engineering-from-scratch)
 de Rohit Ghumare. Ver [CREDITS.md](../../CREDITS.md).
 

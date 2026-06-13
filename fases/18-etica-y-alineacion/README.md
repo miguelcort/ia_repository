@@ -2,7 +2,7 @@
 
 > IA responsable: sesgos, explicabilidad, privacidad y seguridad.
 
-Esta fase recibe el material de la *Clase 7: Ética en IA* del Diplomado
+Esta fase recibe el material de la *Clase 7: Ética en IA* del currículo
 original. Cubre principios éticos, detección de sesgos, explicabilidad
 (XAI), privacidad y alineación.
 
@@ -25,7 +25,7 @@ original. Cubre principios éticos, detección de sesgos, explicabilidad
 ## Material de referencia
 
 Las lecciones de esta fase reemplazan el material de ética en IA del
-diplomado original. Cubren principios éticos, detección de sesgos,
+currículo original. Cubren principios éticos, detección de sesgos,
 explicabilidad (XAI), privacidad y alineación.
 
 ## Objetivos de la fase

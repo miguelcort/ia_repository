@@ -38,7 +38,7 @@ Un entorno virtual es un arbol de directorios con:
 - Un `pip` que solo ve paquetes en `lib/pythonX.Y/site-packages/`.
 - Un script `activate` que anade el `bin/` del entorno al PATH.
 
-En el diplomado usaremos **venv** (incluido en Python 3.3+) en lugar
+En el currículo usaremos **venv** (incluido en Python 3.3+) en lugar
 de `virtualenv` o `conda`, por ser el mas portable y no requerir
 instalacion extra.
 

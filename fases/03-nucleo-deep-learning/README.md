@@ -3,7 +3,7 @@
 > Redes neuronales desde los primeros principios. Sin frameworks hasta haber construido uno.
 
 Esta fase recibe el material de la *Clase 4: Introducción a Deep Learning*
-del Diplomado original. Cubre perceptrón, backprop, optimizadores,
+del currículo original. Cubre perceptrón, backprop, optimizadores,
 funciones de activación, regularización y un mini-framework propio.
 
 | # | Estado | Lección | Tipo | Lenguaje |
@@ -30,7 +30,7 @@ funciones de activación, regularización y un mini-framework propio.
 ## Material de referencia
 
 Las lecciones de esta fase reemplazan la introducción a *Deep Learning*
-del diplomado original. Cubre perceptrón, *backprop*, optimizadores,
+del currículo original. Cubre perceptrón, *backprop*, optimizadores,
 funciones de activación, regularización y un mini-framework propio.
 
 ## Objetivos de la fase

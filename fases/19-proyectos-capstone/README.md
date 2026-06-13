@@ -2,7 +2,7 @@
 
 > Proyecto integrador que demuestra competencia de extremo a extremo.
 
-Esta fase recibe el material de la *Prueba Técnica Final* del Diplomado
+Esta fase recibe el material de la *Prueba Técnica Final* del currículo
 original. Es la entrega final del programa.
 
 | # | Estado | Lección | Tipo | Lenguaje |
@@ -20,7 +20,7 @@ original. Es la entrega final del programa.
 ## Material de referencia
 
 Las lecciones de esta fase reemplazan la prueba técnica final del
-diplomado original. Es la entrega final del programa.
+currículo original. Es la entrega final del programa.
 
 ## Objetivos de la fase
 

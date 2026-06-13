@@ -19,14 +19,14 @@
 
 ## Prerrequisitos
 
-- Ninguno. Esta fase es el punto de partida del diplomado.
+- Ninguno. Esta fase es el punto de partida del currículo.
 
 ## Material de referencia
 
-Esta fase cubre el *setup* necesario para empezar el diplomado. Se
-inspira en la primera clase del programa original de la Universidad
-Distrital, ahora reescrita como lecciones individuales con la
-estructura estándar de este repositorio.
+Esta fase cubre el *setup* necesario para empezar el currículo. Se
+inspira en la primera clase del programa original, ahora reescrita
+como lecciones individuales con la estructura estándar de este
+repositorio.
 
 ## Objetivos de la fase
 

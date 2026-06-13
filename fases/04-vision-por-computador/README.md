@@ -3,7 +3,7 @@
 > De píxeles a comprensión: imagen, video, 3D, VLMs y modelos del mundo.
 
 Esta fase recibe el material de la *Clase 5: Convoluciones y
-Segmentación* del Diplomado original. Cubre CNNs, detección, segmentación,
+Segmentación* del currículo original. Cubre CNNs, detección, segmentación,
 GANs, difusión, ViT, modelos mundo y visión-lenguaje.
 
 | # | Estado | Lección | Tipo | Lenguaje |
@@ -45,7 +45,7 @@ GANs, difusión, ViT, modelos mundo y visión-lenguaje.
 ## Material de referencia
 
 Las lecciones de esta fase reemplazan el material de convoluciones y
-segmentación del diplomado original. Cubren CNNs, detección,
+segmentación del currículo original. Cubren CNNs, detección,
 segmentación, GANs, difusión, ViT, modelos del mundo y visión-lenguaje.
 
 ## Objetivos de la fase

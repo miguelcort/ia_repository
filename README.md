@@ -5,11 +5,11 @@
 > de **Rohit Ghumare** (`@rohitg00`), publicada bajo la licencia MIT.
 > Ver [CREDITS.md](./CREDITS.md) para la atribución completa.
 
-Repositorio oficial del módulo de **Ciencia de Datos y Machine Learning**
-del **Diplomado en Machine Learning** de la **Universidad Distrital
-Francisco José de Caldas**. Reorganiza el plan del diplomado a un
-esquema de **20 fases y ~503 lecciones**, alineado con el currículo
-de Rohit Ghumare.
+Repositorio personal del currículo de **Ciencia de Datos y Machine
+Learning** mantenido por **Miguel Cortés** ([@miguelcort](https://github.com/miguelcort)).
+Reorganiza el plan original a un esquema de **20 fases y ~503 lecciones**,
+alineado con el currículo de Rohit Ghumare y publicado como una
+adaptación al español.
 
 ---
 
@@ -18,8 +18,8 @@ de Rohit Ghumare.
 Este repositorio **no es un clon** del repo original. Es una
 **adaptación pedagógica al español** que:
 
-1. Reorganiza el plan del Diplomado de la Universidad Distrital en un
-   esquema de 20 fases alineado con el currículo de Rohit Ghumare.
+1. Reorganiza el plan de estudios en un esquema de 20 fases alineado
+   con el currículo de Rohit Ghumare.
 2. Adopta la nomenclatura, el plan de estudios y las plantillas del
    repo de Rohit Ghumare (Fase 0 → Fase 19, `docs/es.md`, `code/`,
    `outputs/`, etc.).
@@ -67,12 +67,12 @@ Este repositorio **no es un clon** del repo original. Es una
 ia_repository/
 ├── README.md                  # Este archivo
 ├── ROADMAP.md                 # Estado por fase
-├── CREDITS.md                 # Atribuciones a Rohit Ghumare y Universidad Distrital
+├── CREDITS.md                 # Atribuciones a Rohit Ghumare y Miguel Cortés
 ├── ESTRUCTURA.md              # Layout completo
 ├── PLANTILLA_LECCION.md       # Plantilla de lección en español
 ├── CONTRIBUTING.md           # Cómo contribuir
 ├── GETTING_STARTED.md         # Guía de inicio rápido
-├── LICENSE                    # MIT — Universidad Distrital + crédito a Rohit
+├── LICENSE                    # MIT — Miguel Cortés + crédito a Rohit
 ├── requirements.txt           # Dependencias
 │
 ├── fases/                     # 20 fases del currículo
@@ -212,14 +212,15 @@ cuatro lenguajes (Python, TypeScript, Rust, Julia), licencia MIT.
 > ingeniería de IA bajo MIT.** Este trabajo en español no sería
 > posible sin tu generosidad.
 
-### 2. Adaptación al español — **Miguel Cortés** y la **Universidad Distrital**
+### 2. Adaptación al español — **Miguel Cortés**
 
-- **Adaptación, migración y traducción:** Miguel Cortés
+- **Adaptación, migración, traducción y mantenimiento:** Miguel Cortés
   ([@miguelcort](https://github.com/miguelcort)).
-- **Institución académica:** [Universidad Distrital Francisco José de
-  Caldas](https://www.udistrital.edu.co) — Diplomado en Machine Learning.
-- **Estudiantes y profesores** del Diplomado de la Universidad Distrital
-  que han iterado sobre el material y han inspirado la reorganización.
+- **Curador y contribuidor principal:** Miguel Cortés es responsable de
+  la reorganización del plan, la traducción de los README, plantillas
+  y documentación, y del mantenimiento general del repositorio.
+- **Estudiantes y colaboradores** que han iterado sobre el material y
+  han inspirado la reorganización a lo largo del proyecto.
 
 La atribución detallada, con instrucciones de citación BibTeX y la
 relación de licencias, está en [CREDITS.md](./CREDITS.md).
@@ -243,7 +244,6 @@ con ese requisito.
 - **Repositorio (issues, PRs):** <https://github.com/miguelcort/ia_repository>
 - **Repositorio original (issues, PRs):** <https://github.com/rohitg00/ai-engineering-from-scratch>
 - **Sitio web del autor original:** <https://aiengineeringfromscratch.com>
-- **Universidad Distrital:** <https://www.udistrital.edu.co>
 
 ---
 

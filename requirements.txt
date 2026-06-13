@@ -1,4 +1,4 @@
-# Diplomado Machine Learning - Universidad Distrital
+# Currículo de Ingeniería de IA en español - Miguel Cortés
 # Requirements file for all classes
 
 # Core Scientific Computing

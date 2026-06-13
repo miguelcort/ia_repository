@@ -1,6 +1,6 @@
 # Jupyter Notebooks
 
-Valida la convencion del diplomado para un notebook:
+Valida la convencion del currículo para un notebook:
 
 ```bash
 cd code

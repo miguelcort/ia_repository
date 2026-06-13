@@ -1,6 +1,6 @@
 # Configuracion del editor (VS Code)
 
-Verifica que tu `.vscode/` cumple la convencion del diplomado:
+Verifica que tu `.vscode/` cumple la convencion del currículo:
 
 ```bash
 cd code

@@ -1,8 +1,8 @@
 # 🚀 Guía de Inicio Rápido
 
-Bienvenido al **Diplomado en Machine Learning** de la **Universidad
-Distrital Francisco José de Caldas**, en su versión en español del
-currículo [AI Engineering from
+Bienvenido al currículo de **Ingeniería de IA en español** mantenido
+por **Miguel Cortés** ([@miguelcort](https://github.com/miguelcort)),
+basado en [AI Engineering from
 Scratch](https://github.com/rohitg00/ai-engineering-from-scratch) de
 **Rohit Ghumare**.
 
@@ -193,7 +193,7 @@ python3 -c "import torch; print(torch.backends.mps.is_available())"
 ### Recursos de ayuda
 
 - [Issues del repositorio](https://github.com/miguelcort/ia_repository/issues)
-- Foros de la Universidad Distrital (consultar con el instructor).
+- Foros de la comunidad y canales del autor original.
 - Documentación oficial de cada librería (enlaces en
   [`recursos/`](./recursos/)).
 
