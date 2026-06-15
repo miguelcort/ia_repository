@@ -1,19 +1,33 @@
 """
 Lección: 29-end-to-end-coding-task-demo
-Fase: 00
-Prerrequisitos: Ninguno
-Fuentes: <añadir URLs a papers, RFCs o docs oficiales>
+Fase: 19
+Capstone de ingeniería AI: 29 End To End Coding Task Demo.
 """
 from __future__ import annotations
-
 import sys
+
+class CodingAgent:
+    def __init__(self, llm, tools, sandbox):
+        self.llm = llm
+        self.tools = tools
+        self.sandbox = sandbox
+
+    def solve(self, issue):
+        context = self.tools.explore(issue.repo)
+        plan = self.llm.plan(issue, context)
+        changes = self.tools.edit(plan)
+        result = self.sandbox.test(changes)
+        while not result["passes"] and result["iter"] < 5:
+            changes = self.llm.fix(result, changes)
+            result = self.sandbox.test(changes)
+        return changes
+
 
 
 def main() -> int:
-    """Demo auto-terminal. Imprime un resumen del entorno."""
-    print("=== 29-end-to-end-coding-task-demo ===")
+    """Demo auto-terminal. Imprime resumen."""
+    print(f"=== {slug} ===")
     print(f"Python {sys.version.split()[0]}")
-    print(f"Plataforma: {sys.platform}")
     return 0
 
 

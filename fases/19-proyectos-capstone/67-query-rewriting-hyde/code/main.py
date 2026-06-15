@@ -1,19 +1,26 @@
 """
 Lección: 67-query-rewriting-hyde
-Fase: 00
-Prerrequisitos: Ninguno
-Fuentes: <añadir URLs a papers, RFCs o docs oficiales>
+Fase: 19
+Capstone de ingeniería AI: 67 Query Rewriting Hyde.
 """
 from __future__ import annotations
-
 import sys
+
+def hyde_retrieval(query, llm, retriever, k=10):
+    hyp = llm(f"Answer concisely: {query}")
+    return retriever.query(hyp, top_k=k)
+
+
+def multi_query(query, llm, retriever, n=4):
+    variants = llm(f"Generate {n} alternative phrasings: {query}")
+    return [retriever.query(v) for v in variants]
+
 
 
 def main() -> int:
-    """Demo auto-terminal. Imprime un resumen del entorno."""
-    print("=== 67-query-rewriting-hyde ===")
+    """Demo auto-terminal. Imprime resumen."""
+    print(f"=== {slug} ===")
     print(f"Python {sys.version.split()[0]}")
-    print(f"Plataforma: {sys.platform}")
     return 0
 
 

@@ -1,50 +1,107 @@
-# 50-hypothesis-generator
+# 50 — Hypothesis generator
 
-> <Lema de una línea: la idea central en una frase>
+> Hypothesis generator: el agente propone hipótesis research. LLM + chain-of-thought + prior literature. Criterios: novelty, feasibility, impact. Loop: generate → critique → refine.
 
 **Tipo:** Construir
-**Lenguajes:** python
-**Prerrequisitos:** Ninguno
-**Tiempo estimado:** ~30 minutos
+**Lenguajes:** Python
+**Prerrequisitos:** Fase 19/05, Fase 14
+**Tiempo estimado:** ~25 minutos
 
-## Objetivos de aprendizaje
+## Objetivos
 
-- <Verbo en infinitivo> + <objeto> + <contexto>
-- <Verbo en infinitivo> + <objeto> + <contexto>
-- <Verbo en infinitivo> + <objeto> + <contexto>
-- 4-6 viñetas en total.
-
-## El problema
-
-<Describe el dolor concreto que esta lección resuelve.>
-
-## El concepto
-
-<Intuición y matemática mínima, si aplica. Diagramas con Mermaid o SVG.>
+- LLM hypothesis generation.
+- Novelty/feasibility scoring.
+- Critique loop.
+- Research output.
 
 ## Constrúyelo
 
-<Implementación desde cero, sin frameworks.>
+```python
+def generate_hypothesis(topic, prior_lit, llm):
+    prompt = f"""Topic: {topic}
+Prior literature: {prior_lit}
+
+Generate 3 testable hypotheses with:
+- Novelty (not in prior work)
+- Feasibility (data + compute available)
+- Impact (potential contribution)
+
+For each: claim, test, expected outcome."""
+    return llm.generate(prompt)
+```
 
 ## Úsalo
 
-<La misma operación con la librería o herramienta estándar.>
+```bash
+cd code
+python3 main.py
+```
+
+## Despliégalo
+
+```markdown
+---
+name: prompt-hypothesis
+fase: 19
+leccion: 50
+---
+
+1. Topic + prior lit.
+2. Hypothesis generation.
+3. Novelty check.
+4. Feasibility.
+5. Critique loop.
+```
 
 ## Ejercicios
 
-1. Ejercicio guiado.
-2. Ejercicio con pista.
-3. Ejercicio desafío (sin pistas).
+1. **Generate**: 5
+   hipótesis para un
+   dataset.
+2. **Critique**: implementar
+   novelty check.
+3. **Desafío**: end-to-end
+   research loop.
 
 ## Lecturas recomendadas
 
-- <Paper, RFC o documentación oficial>
+- "AI Co-scientist" (Google 2024)
+- "STORM" (Shao 2024)
+- "SciMON" (Wang 2024)
+
+
+
+## Detalles avanzados
+
+Esta lección cubre los trade-offs críticos de
+producción. Considera scaling: en pre-training el
+factor dominante es cómputo disponible; en inference
+es latencia y costo. Frameworks standard: PyTorch
+(HF Transformers, TRL, vLLM), JAX (Flax, Optax).
+Optimizaciones: FlashAttention-2, paged attention,
+KV cache compression, speculative decoding, MoE.
+
+Eval riguroso: statistical significance testing
+sobre múltiples seeds, held-out test sets sin
+contamination, y edge cases del domain. Métricas:
+BLEU/ROUGE para text generation, exact match/F1
+para QA, pass@k para code, human preference para
+chat.
+
+Trampas comunes: data leakage entre train/test,
+overfitting al validation set, eval con prompts
+fuera de distribución, ignore de tail latency en
+serving, cost runaway en production.
+
+Tools clave: Weights & Biases o MLflow para
+tracking, Langfuse para LLM observability, Hydra
+para config, Ray para distributed execution, vLLM
+para serving LLM. Conoce al menos uno a fondo antes
+de producción.
 
 ---
 
 > 📚 **Adaptación al español** de la lección
 > "[50-hypothesis-generator]" del currículo
 > [AI Engineering from Scratch](https://github.com/rohitg00/ai-engineering-from-scratch)
-> (Rohit Ghumare, MIT). Implementación y documentación reescritas
-> desde cero. Ver [CREDITS.md](../../../CREDITS.md).
-
+> (Rohit Ghumare, MIT). Ver [CREDITS.md](../../../../CREDITS.md).

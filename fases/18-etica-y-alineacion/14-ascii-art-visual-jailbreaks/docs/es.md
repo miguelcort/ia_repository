@@ -1,50 +1,87 @@
-# 14-ascii-art-visual-jailbreaks
+# 14 — ASCII art y visual jailbreaks
 
-> <Lema de una línea: la idea central en una frase>
+> ASCII art jailbreaks (Glm 2024): un modelo puede "ver" texto en arte ASCII. Prompt injection visual: código en imágenes que evade text-only safety filters. Multimodal models son vulnerables.
 
 **Tipo:** Construir
-**Lenguajes:** python
-**Prerrequisitos:** Ninguno
-**Tiempo estimado:** ~30 minutos
+**Lenguajes:** Python
+**Prerrequisitos:** 18/12, 18/13
+**Tiempo estimado:** ~25 minutos
 
-## Objetivos de aprendizaje
+## Objetivos
 
-- <Verbo en infinitivo> + <objeto> + <contexto>
-- <Verbo en infinitivo> + <objeto> + <contexto>
-- <Verbo en infinitivo> + <objeto> + <contexto>
-- 4-6 viñetas en total.
-
-## El problema
-
-<Describe el dolor concreto que esta lección resuelve.>
-
-## El concepto
-
-<Intuición y matemática mínima, si aplica. Diagramas con Mermaid o SVG.>
+- Generar ASCII art de harmful text.
+- Evaluar visual jailbreak success.
+- Implementar OCR defense.
+- Diagnosticar multimodal attack surface.
 
 ## Constrúyelo
 
-<Implementación desde cero, sin frameworks.>
+```python
+import numpy as np
+
+
+def ascii_art_jailbreak(harmful_text, figlet_style="standard"):
+    """Genera ASCII art del harmful text."""
+    try:
+        import pyfiglet
+        return pyfiglet.figlet_format(harmful_text, font=figlet_style)
+    except ImportError:
+        return " ".join(harmful_text)
+
+
+def visual_prompt_injection(image_with_text, llava_model,
+                          target_text):
+    """Prompt injection visual: texto en imagen evade
+    text safety filter."""
+    prompt = f"Describe text in image. Then: {target_text}"
+    return llava_model(image=image_with_text, prompt=prompt)
+
+
+def ocr_defense(image):
+    """OCR defense: extrae texto, aplica text safety filter."""
+    import pytesseract
+    text = pytesseract.image_to_string(image)
+    return text
+```
 
 ## Úsalo
 
-<La misma operación con la librería o herramienta estándar.>
+```bash
+cd code
+python3 main.py
+```
+
+## Despliégalo
+
+```markdown
+---
+name: prompt-visual-jailbreak
+fase: 18
+leccion: 14
+---
+
+1. Generar ASCII art de harmful text.
+2. Evaluar text-only safety filter.
+3. Implementar OCR defense.
+4. Multimodal attack surface.
+```
 
 ## Ejercicios
 
-1. Ejercicio guiado.
-2. Ejercicio con pista.
-3. Ejercicio desafío (sin pistas).
+1. **ASCII art**: probar figlet fonts en
+   frontier model.
+2. **Visual injection**: texto oculto en
+   imagen, evaluar LLaVA.
+3. **Desafío**: diseñar multimodal defense.
 
 ## Lecturas recomendadas
 
-- <Paper, RFC o documentación oficial>
+- "ArtPrompt: ASCII Art-based Jailbreak" (Glm 2024)
+- "Visual Prompt Injection" (Microsoft 2024)
 
 ---
 
 > 📚 **Adaptación al español** de la lección
 > "[14-ascii-art-visual-jailbreaks]" del currículo
 > [AI Engineering from Scratch](https://github.com/rohitg00/ai-engineering-from-scratch)
-> (Rohit Ghumare, MIT). Implementación y documentación reescritas
-> desde cero. Ver [CREDITS.md](../../../CREDITS.md).
-
+> (Rohit Ghumare, MIT). Ver [CREDITS.md](../../../../CREDITS.md).

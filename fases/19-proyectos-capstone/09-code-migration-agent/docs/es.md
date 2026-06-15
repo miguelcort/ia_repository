@@ -1,50 +1,89 @@
-# 09-code-migration-agent
+# 09 — Code migration agent
 
-> <Lema de una línea: la idea central en una frase>
+> Code migration agent: COBOL → Java, Python 2 → 3, jQuery → React, monolith → microservices. Multi-file, syntactic + semantic analysis, test generation, regression. Sistemas como Moderne, MetaGPT, Devin.
 
-**Tipo:** Construir
-**Lenguajes:** python
-**Prerrequisitos:** Ninguno
-**Tiempo estimado:** ~30 minutos
+**Tipo:** Capstone
+**Lenguajes:** Python, TypeScript
+**Prerrequisitos:** Fase 11, Fase 14 (agents), Fase 13
+**Tiempo estimado:** 30 horas
 
-## Objetivos de aprendizaje
+## Objetivos
 
-- <Verbo en infinitivo> + <objeto> + <contexto>
-- <Verbo en infinitivo> + <objeto> + <contexto>
-- <Verbo en infinitivo> + <objeto> + <contexto>
-- 4-6 viñetas en total.
+- AST-based code analysis.
+- Translation con preservation.
+- Test generation + validation.
+- Eval sobre benchmarks (CodeNet, HumanEval).
 
 ## El problema
 
-<Describe el dolor concreto que esta lección resuelve.>
-
-## El concepto
-
-<Intuición y matemática mínima, si aplica. Diagramas con Mermaid o SVG.>
+Code migration agents automatizan upgrades: COBOL
+→ Java (IBM watsonx), Python 2 → 3, jQuery →
+React, monorepo split. Pipeline: (1) AST analysis
+(tree-sitter, OpenRewrite). (2) Symbol resolution.
+(3) Translation rules (LLM-guided). (4) Test
+generation (preserves semantics). (5) Compile +
+test. (6) Regression check. Métrica: % files
+migrated, % tests passing, semantic equivalence.
 
 ## Constrúyelo
 
-<Implementación desde cero, sin frameworks.>
+```python
+import tree_sitter
+
+
+def migrate_code(source_lang, target_lang, source_code,
+               rules, llm):
+    parser = tree_sitter.Parser(source_lang)
+    tree = parser.parse(source_code)
+    # AST-guided translation
+    translated = translate_ast(tree, target_lang, rules, llm)
+    # Generate tests
+    tests = generate_tests(source_code, translated, llm)
+    return translated, tests
+```
 
 ## Úsalo
 
-<La misma operación con la librería o herramienta estándar.>
+```bash
+cd code
+python3 main.py
+```
+
+## Despliégalo
+
+```markdown
+---
+name: prompt-code-migration
+fase: 19
+leccion: 09
+---
+
+1. AST parsing.
+2. Translation rules + LLM.
+3. Test generation.
+4. Regression check.
+5. Migration metrics.
+```
 
 ## Ejercicios
 
-1. Ejercicio guiado.
-2. Ejercicio con pista.
-3. Ejercicio desafío (sin pistas).
+1. **Python 2→3**: migrar 10 scripts
+   con tests.
+2. **jQuery→React**: componente
+   simple.
+3. **Desafío**: monorepo split
+   end-to-end.
 
 ## Lecturas recomendadas
 
-- <Paper, RFC o documentación oficial>
+- "OpenRewrite" (Moderne 2024)
+- "Devin" (Cognition 2024)
+- "CodePort" (IBM 2024)
+- "MetaGPT" (Hong 2023)
 
 ---
 
 > 📚 **Adaptación al español** de la lección
 > "[09-code-migration-agent]" del currículo
 > [AI Engineering from Scratch](https://github.com/rohitg00/ai-engineering-from-scratch)
-> (Rohit Ghumare, MIT). Implementación y documentación reescritas
-> desde cero. Ver [CREDITS.md](../../../CREDITS.md).
-
+> (Rohit Ghumare, MIT). Ver [CREDITS.md](../../../../CREDITS.md).

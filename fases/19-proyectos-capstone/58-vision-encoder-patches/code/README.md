@@ -1,7 +1,14 @@
 # 58-vision-encoder-patches
 
-Ejecuta el demo:
+Implementación de 58 Vision Encoder Patches para la fase 19.
+
+## Uso
 
 ```bash
 python3 -m unittest discover -s tests -v
 ```
+
+## Prerrequisitos
+
+- Python 3.10+
+- numpy, torch (opcional)

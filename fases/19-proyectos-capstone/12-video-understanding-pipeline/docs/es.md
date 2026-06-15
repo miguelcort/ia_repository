@@ -1,50 +1,94 @@
-# 12-video-understanding-pipeline
+# 12 — Video understanding pipeline
 
-> <Lema de una línea: la idea central en una frase>
+> Video understanding: frame extraction, ASR (Whisper), scene detection, temporal grounding, video QA. Modelos: Video-LLaVA, Gemini 1.5 Pro (1M context), GPT-4o, Qwen2-VL. Use cases: highlight generation, action recognition, video search.
 
-**Tipo:** Construir
-**Lenguajes:** python
-**Prerrequisitos:** Ninguno
-**Tiempo estimado:** ~30 minutos
+**Tipo:** Capstone
+**Lenguajes:** Python
+**Prerrequisitos:** Fase 12 (multimodal), Fase 6 (audio), Fase 11
+**Tiempo estimado:** 25 horas
 
-## Objetivos de aprendizaje
+## Objetivos
 
-- <Verbo en infinitivo> + <objeto> + <contexto>
-- <Verbo en infinitivo> + <objeto> + <contexto>
-- <Verbo en infinitivo> + <objeto> + <contexto>
-- 4-6 viñetas en total.
+- Frame extraction + scene detection.
+- ASR con Whisper.
+- Video QA con VLM.
+- Eval sobre VideoMME, EgoSchema.
 
 ## El problema
 
-<Describe el dolor concreto que esta lección resuelve.>
-
-## El concepto
-
-<Intuición y matemática mínima, si aplica. Diagramas con Mermaid o SVG.>
+Video understanding pipeline: (1) Frame extraction
+(PyAV, ffmpeg, 1 fps). (2) Scene detection
+(TransNetV2, PySceneDetect). (3) ASR con Whisper
+(timestamps). (4) OCR (subtitle text, on-screen
+text). (5) Embedding: Video-LLaVA, ImageBind.
+(6) VLM: Gemini 1.5 Pro (1M context), GPT-4o,
+Qwen2-VL. Use cases: video search, highlight
+generation, action recognition. Eval: VideoMME,
+EgoSchema, NExT-QA.
 
 ## Constrúyelo
 
-<Implementación desde cero, sin frameworks.>
+```python
+import av
+from transformers import Qwen2VLForConditionalGeneration
+
+
+def extract_frames(video_path, fps=1):
+    container = av.open(video_path)
+    frames = []
+    for frame in container.decode(video=0):
+        if frame.time >= len(frames) / fps:
+            frames.append(frame.to_image())
+    return frames
+
+
+def video_qa(video_path, question, model="Qwen/Qwen2-VL-7B"):
+    vlm = Qwen2VLForConditionalGeneration.from_pretrained(model)
+    return vlm.chat(video=video_path, question=question)
+```
 
 ## Úsalo
 
-<La misma operación con la librería o herramienta estándar.>
+```bash
+cd code
+python3 main.py
+```
+
+## Despliégalo
+
+```markdown
+---
+name: prompt-video-understanding
+fase: 19
+leccion: 12
+---
+
+1. Frame extraction.
+2. ASR + scene detection.
+3. VLM (Qwen2-VL, Gemini 1.5).
+4. Temporal grounding.
+5. Eval VideoMME.
+```
 
 ## Ejercicios
 
-1. Ejercicio guiado.
-2. Ejercicio con pista.
-3. Ejercicio desafío (sin pistas).
+1. **Frame + ASR**: 10 videos
+   de YouTube.
+2. **VLM QA**: 100 preguntas
+   sobre videos.
+3. **Desafío**: highlight
+   generation pipeline.
 
 ## Lecturas recomendadas
 
-- <Paper, RFC o documentación oficial>
+- "Qwen2-VL" (Alibaba 2024)
+- "Gemini 1.5 Pro" (Google 2024)
+- "VideoMME" (Fu 2024)
+- "Video-LLaVA" (Lin 2023)
 
 ---
 
 > 📚 **Adaptación al español** de la lección
 > "[12-video-understanding-pipeline]" del currículo
 > [AI Engineering from Scratch](https://github.com/rohitg00/ai-engineering-from-scratch)
-> (Rohit Ghumare, MIT). Implementación y documentación reescritas
-> desde cero. Ver [CREDITS.md](../../../CREDITS.md).
-
+> (Rohit Ghumare, MIT). Ver [CREDITS.md](../../../../CREDITS.md).

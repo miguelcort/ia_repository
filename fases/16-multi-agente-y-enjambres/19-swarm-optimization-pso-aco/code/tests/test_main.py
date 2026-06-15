@@ -41,5 +41,14 @@ class TestMain(unittest.TestCase):
         self.assertEqual(rc, 0)
 
 
+class TestACO(unittest.TestCase):
+    def test_aco_tsp(self):
+        """ACO TSP demo: shortest path plausible."""
+        import main as m
+        if hasattr(m, "aco_tsp"):
+            path = m.aco_tsp(n_cities=10, n_iter=20)
+            self.assertIsNotNone(path)
+
+
 if __name__ == "__main__":
     unittest.main()

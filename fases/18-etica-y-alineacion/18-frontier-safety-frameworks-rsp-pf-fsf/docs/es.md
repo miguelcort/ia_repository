@@ -1,50 +1,93 @@
-# 18-frontier-safety-frameworks-rsp-pf-fsf
+# 18 — Frontier safety frameworks: RSP, Pf, FSF
 
-> <Lema de una línea: la idea central en una frase>
+> Frontier safety frameworks son políticas de empresas (Anthropic RSP, OpenAI Preparedness, Meta Frontier Safety) que definen compute thresholds, evals obligatorios, y mitigaciones para riesgos catastróficos.
 
 **Tipo:** Construir
-**Lenguajes:** python
-**Prerrequisitos:** Ninguno
+**Lenguajes:** Python
+**Prerrequisitos:** 18/17, 18/16
 **Tiempo estimado:** ~30 minutos
 
-## Objetivos de aprendizaje
+## Objetivos
 
-- <Verbo en infinitivo> + <objeto> + <contexto>
-- <Verbo en infinitivo> + <objeto> + <contexto>
-- <Verbo en infinitivo> + <objeto> + <contexto>
-- 4-6 viñetas en total.
-
-## El problema
-
-<Describe el dolor concreto que esta lección resuelve.>
-
-## El concepto
-
-<Intuición y matemática mínima, si aplica. Diagramas con Mermaid o SVG.>
+- Conocer RSP, Pf, FSF.
+- Implementar compute threshold gates.
+- Definir evals obligatorios.
+- Diagnosticar compliance.
 
 ## Constrúyelo
 
-<Implementación desde cero, sin frameworks.>
+```python
+def rsp_compliance_check(model, eval_thresholds):
+    """Anthropic RSP: ASL-2, ASL-3 thresholds."""
+    return {
+        "capability_threshold": model.capability_estimate
+                              >= eval_thresholds["as_l_3"],
+        "deployment_safety": model.safety_cases_passed,
+        "interpretability_done": model.interpretability_audited,
+    }
+
+
+def compute_threshold_gate(flops, threshold=1e26):
+    """Gating training runs por FLOPs compute threshold."""
+    if flops >= threshold:
+        return {"action": "require_safety_case",
+                "evals": ["cyber", "bio", "autonomy"]}
+    return {"action": "standard_release"}
+
+
+def safety_case_report(model, eval_results):
+    """Safety case report para frontier release."""
+    return {
+        "model": model.name,
+        "evals_passed": all(r["passed"] for r in eval_results),
+        "capabilities": {r["category"]: r["score"]
+                        for r in eval_results},
+        "residual_risks": [r for r in eval_results
+                          if not r["passed"]],
+    }
+```
 
 ## Úsalo
 
-<La misma operación con la librería o herramienta estándar.>
+```bash
+cd code
+python3 main.py
+```
+
+## Despliégalo
+
+```markdown
+---
+name: prompt-rsp
+fase: 18
+leccion: 18
+---
+
+1. Definir compute thresholds.
+2. Implementar eval gates.
+3. Safety case report.
+4. Documentar compliance.
+```
 
 ## Ejercicios
 
-1. Ejercicio guiado.
-2. Ejercicio con pista.
-3. Ejercicio desafío (sin pistas).
+1. **RSP**: implementar compute gate
+   para ASL-2/3.
+2. **Safety case**: generar report para
+   modelo propio.
+3. **Desafío**: diseñar FSF para
+   organización.
 
 ## Lecturas recomendadas
 
-- <Paper, RFC o documentación oficial>
+- "Anthropic Responsible Scaling Policy"
+  (Anthropic 2024)
+- "OpenAI Preparedness Framework" (OpenAI 2023)
+- "Meta Frontier Safety Framework" (Meta 2024)
 
 ---
 
 > 📚 **Adaptación al español** de la lección
 > "[18-frontier-safety-frameworks-rsp-pf-fsf]" del currículo
 > [AI Engineering from Scratch](https://github.com/rohitg00/ai-engineering-from-scratch)
-> (Rohit Ghumare, MIT). Implementación y documentación reescritas
-> desde cero. Ver [CREDITS.md](../../../CREDITS.md).
-
+> (Rohit Ghumare, MIT). Ver [CREDITS.md](../../../../CREDITS.md).

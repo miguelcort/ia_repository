@@ -54,12 +54,52 @@ leccion: 10
 3. **Desafio**: implementar
    custom benchmark.
 
+## Ejercicios
+
+1. **lm-eval-harness**: correr benchmark suite en
+   un modelo HF (TinyLlama 1.1B).
+2. **Arena**: simular A/B voting entre dos modelos,
+   calcular Elo.
+3. **Pass@k**: escribir generador + tests para
+   HumanEval problem 0 (sumar dos números).
+4. **Desafío**: implementar LLM-as-judge usando
+   Claude API y evaluar 50 outputs propios.
+
+## Limitaciones y frontier benchmarks
+
+Limitaciones críticas: (1) Contamination: el test set
+puede estar en training data. Mitigación: decontaminate
+con n-gram overlap, dynamic benchmarks (LiveCodeBench,
+ARC-AGI). (2) Saturation: 90%+ en MMLU, HumanEval; ya
+no discrimina entre frontier models. (3) Format
+dependence: 5-shot CoT vs 0-shot cambia 10-30 puntos.
+(4) Linguistic bias: English-centric.
+
+Frontier benchmarks 2024-2026: (1) FrontierMath (Epoch
+AI, 100 problemas, +hard). (2) Humanity's Last Exam
+(HLE, multi-domain). (3) ARC-AGI (Abstraction
+Reasoning Corpus). (4) GPQA Diamond (198 graduate
+q&a). (5) MMLU-Pro (12K, harder). (6) BigCodeBench
+(real code, 1000+). (7) WildBench, LiveBench (real
+prompts).
+
+Frameworks: lm-evaluation-harness (EleutherAI, +100
+benchmarks, el standard). HELM (Stanford, holistic,
+multi-metric). AlpacaEval (LLM judge, MT-Bench,
++rápido). HELM Safety, DecodingTrust (safety).
+OpenLLM Leaderboard v2. OpenAI evals framework.
+LMSYS Arena (real human preference). HuggingFace
+evaluate (Python library, glue, superglue).
+
 ## Lecturas recomendadas
 
 - "Measuring Massive Multitask Language Understanding" (Hendrycks et al., 2020)
 - "Evaluating the Unevaluable: HumanEval" (Chen et al., 2021)
 - "Judging LLM-as-a-Judge with MT-Bench and Chatbot Arena" (Zheng et al., 2023)
 - "lm-evaluation-harness" (EleutherAI, Gao et al., 2021)
+- "FrontierMath" (Epoch AI, 2024)
+- "SWE-bench: Can Language Models Resolve Real-World GitHub Issues?" (Jimenez et al., 2024)
+- "LiveCodeBench: Holistic and Contamination Free Evaluation of Large Language Models for Code" (2024)
 
 ---
 

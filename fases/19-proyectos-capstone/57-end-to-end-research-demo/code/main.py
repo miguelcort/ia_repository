@@ -1,19 +1,32 @@
 """
 Lección: 57-end-to-end-research-demo
-Fase: 00
-Prerrequisitos: Ninguno
-Fuentes: <añadir URLs a papers, RFCs o docs oficiales>
+Fase: 19
+Capstone de ingeniería AI: 57 End To End Research Demo.
 """
 from __future__ import annotations
-
 import sys
+
+class ResearchPipeline:
+    def __init__(self, llm, sandbox, evaluator):
+        self.llm = llm
+        self.sandbox = sandbox
+        self.evaluator = evaluator
+
+    def run(self, question, max_iters=5):
+        hypotheses = self.generate_hypotheses(question)
+        for i in range(max_iters):
+            results = [self.sandbox.run(self.generate_code(h))
+                      for h in hypotheses]
+            best = self.evaluator.rank(results)
+            hypotheses = self.refine(hypotheses, best)
+        return self.write_paper(hypotheses, results)
+
 
 
 def main() -> int:
-    """Demo auto-terminal. Imprime un resumen del entorno."""
-    print("=== 57-end-to-end-research-demo ===")
+    """Demo auto-terminal. Imprime resumen."""
+    print(f"=== {slug} ===")
     print(f"Python {sys.version.split()[0]}")
-    print(f"Plataforma: {sys.platform}")
     return 0
 
 

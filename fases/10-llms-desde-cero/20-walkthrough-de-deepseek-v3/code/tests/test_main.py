@@ -42,5 +42,13 @@ class TestMain(unittest.TestCase):
         self.assertEqual(rc, 0)
 
 
+class TestInnovations(unittest.TestCase):
+    def test_innovations_list(self):
+        """DeepSeek-V3 innovations."""
+        innovations = main.deepseek_v3_innovations()
+        self.assertIsInstance(innovations, list)
+        self.assertGreater(len(innovations), 0)
+
+
 if __name__ == "__main__":
     unittest.main()

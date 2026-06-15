@@ -1,50 +1,100 @@
-# 21-tool-registry-schema-validation
+# 21 — Tool registry y schema validation
 
-> <Lema de una línea: la idea central en una frase>
+> Tool registry: catálogo central de tools con schemas (JSON Schema), permisos (allow/deny), rate limits, rate tracking. Validación: pydantic, JSON Schema. MCP standard. Frameworks: LangChain, FastMCP.
 
 **Tipo:** Construir
-**Lenguajes:** python
-**Prerrequisitos:** Ninguno
+**Lenguajes:** Python
+**Prerrequisitos:** Fase 13, Fase 19/20
 **Tiempo estimado:** ~30 minutos
 
-## Objetivos de aprendizaje
+## Objetivos
 
-- <Verbo en infinitivo> + <objeto> + <contexto>
-- <Verbo en infinitivo> + <objeto> + <contexto>
-- <Verbo en infinitivo> + <objeto> + <contexto>
-- 4-6 viñetas en total.
+- Tool registry con schemas.
+- Validation (pydantic, JSON Schema).
+- Permission system.
+- Rate limiting.
 
 ## El problema
 
-<Describe el dolor concreto que esta lección resuelve.>
-
-## El concepto
-
-<Intuición y matemática mínima, si aplica. Diagramas con Mermaid o SVG.>
+Tool registry es la fuente de verdad: cada tool
+tiene (1) name, (2) description (para LLM), (3)
+JSON Schema (input validation), (4) permissions
+(allow/deny por tool, per agent), (5) rate limits
+(N calls per minute). Validación: pydantic para
+Python, JSON Schema para cross-language. MCP usa
+JSON Schema. Errores de validación: log + refuse
++ retry prompt.
 
 ## Constrúyelo
 
-<Implementación desde cero, sin frameworks.>
+```python
+from pydantic import BaseModel, ValidationError
+import jsonschema
+
+
+class ToolRegistry:
+    def __init__(self):
+        self.tools = {}
+
+    def register(self, name, fn, schema, permissions):
+        self.tools[name] = {"fn": fn, "schema": schema,
+                           "permissions": permissions}
+
+    def execute(self, name, args, agent_id):
+        tool = self.tools.get(name)
+        if not tool:
+            raise ValueError(f"Unknown tool: {name}")
+        if not self._check_permission(tool, agent_id):
+            raise PermissionError(f"Denied: {name}")
+        try:
+            jsonschema.validate(args, tool["schema"])
+        except jsonschema.ValidationError as e:
+            raise ValueError(f"Invalid args: {e}")
+        return tool["fn"](**args)
+```
 
 ## Úsalo
 
-<La misma operación con la librería o herramienta estándar.>
+```bash
+cd code
+python3 main.py
+```
+
+## Despliégalo
+
+```markdown
+---
+name: prompt-tool-registry
+fase: 19
+leccion: 21
+---
+
+1. Schema por tool.
+2. Permission system.
+3. Rate limiting.
+4. JSON Schema validation.
+5. MCP-compatible.
+```
 
 ## Ejercicios
 
-1. Ejercicio guiado.
-2. Ejercicio con pista.
-3. Ejercicio desafío (sin pistas).
+1. **Registry**: 10 tools
+   con schemas.
+2. **Validation**: invalid
+   args handling.
+3. **Desafío**: rate limiting
+   per agent.
 
 ## Lecturas recomendadas
 
-- <Paper, RFC o documentación oficial>
+- "MCP" (Anthropic 2024)
+- "JSON Schema" (2024)
+- "Pydantic" (2024)
+- "FastMCP" (2024)
 
 ---
 
 > 📚 **Adaptación al español** de la lección
 > "[21-tool-registry-schema-validation]" del currículo
 > [AI Engineering from Scratch](https://github.com/rohitg00/ai-engineering-from-scratch)
-> (Rohit Ghumare, MIT). Implementación y documentación reescritas
-> desde cero. Ver [CREDITS.md](../../../CREDITS.md).
-
+> (Rohit Ghumare, MIT). Ver [CREDITS.md](../../../../CREDITS.md).

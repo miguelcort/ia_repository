@@ -1,7 +1,14 @@
 # 56-iteration-scheduler
 
-Ejecuta el demo:
+Implementación de 56 Iteration Scheduler para la fase 19.
+
+## Uso
 
 ```bash
 python3 -m unittest discover -s tests -v
 ```
+
+## Prerrequisitos
+
+- Python 3.10+
+- numpy, torch (opcional)

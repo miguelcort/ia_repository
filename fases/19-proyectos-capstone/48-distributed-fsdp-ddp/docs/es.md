@@ -1,50 +1,98 @@
-# 48-distributed-fsdp-ddp
+# 48 — Distributed FSDP / DDP
 
-> <Lema de una línea: la idea central en una frase>
+> Distributed training: DDP (data parallel, full replica per GPU), FSDP (sharded params + grads + optim, ZeRO-3). Mixed precision, gradient compression, overlap. Frameworks: torch.distributed, DeepSpeed, FairScale, Accelerate.
 
 **Tipo:** Construir
-**Lenguajes:** python
-**Prerrequisitos:** Ninguno
+**Lenguajes:** Python
+**Prerrequisitos:** Fase 19/45-47
 **Tiempo estimado:** ~30 minutos
 
-## Objetivos de aprendizaje
+## Objetivos
 
-- <Verbo en infinitivo> + <objeto> + <contexto>
-- <Verbo en infinitivo> + <objeto> + <contexto>
-- <Verbo en infinitivo> + <objeto> + <contexto>
-- 4-6 viñetas en total.
-
-## El problema
-
-<Describe el dolor concreto que esta lección resuelve.>
-
-## El concepto
-
-<Intuición y matemática mínima, si aplica. Diagramas con Mermaid o SVG.>
+- DDP setup.
+- FSDP sharding.
+- Mixed precision.
+- Benchmark.
 
 ## Constrúyelo
 
-<Implementación desde cero, sin frameworks.>
+```python
+import torch.distributed as dist
+from torch.distributed.fsdp import FullyShardedDataParallel
+                as FSDP
+from torch.distributed.fsdp import MixedPrecision
+
+
+def fsdp_setup(model, use_mp=True):
+    """FSDP wrapping con mixed precision."""
+    mp_policy = (MixedPrecision(
+        param_dtype=torch.bfloat16,
+        reduce_dtype=torch.bfloat16,
+        buffer_dtype=torch.bfloat16) if use_mp else None)
+    return FSDP(model, mixed_precision=mp_policy,
+               use_orig_params=True)
+
+
+def ddp_setup(rank, world_size, backend="nccl"):
+    dist.init_process_group(backend, rank=rank,
+                            world_size=world_size)
+    torch.cuda.set_device(rank)
+```
 
 ## Úsalo
 
-<La misma operación con la librería o herramienta estándar.>
+```bash
+cd code
+python3 main.py
+```
+
+## Despliégalo
+
+```markdown
+---
+name: prompt-distributed
+fase: 19
+leccion: 48
+---
+
+1. DDP setup.
+2. FSDP sharding.
+3. Mixed precision.
+4. Benchmark scaling.
+```
 
 ## Ejercicios
 
-1. Ejercicio guiado.
-2. Ejercicio con pista.
-3. Ejercicio desafío (sin pistas).
+1. **DDP**: 4 GPUs.
+2. **FSDP**: 8 GPUs,
+   Llama 3 70B.
+3. **Desafío**: 256 GPU
+   training.
 
 ## Lecturas recomendadas
 
-- <Paper, RFC o documentación oficial>
+- "PyTorch FSDP" (2024)
+- "ZeRO" (Rajbhandari 2020)
+- "DeepSpeed" (Microsoft 2020)
+- "Accelerate" (Hugging Face)
+
+## Detalles adicionales
+
+Mixed DDP + FSDP: DDP outer (8 nodes), FSDP inner
+(8 GPUs/node). 64 GPU effective, model sharded dentro
+de node, replicated across nodes.
+
+Init: `torch.distributed.init_process_group("nccl")`.
+Backend: NCCL (GPU), Gloo (CPU). Launcher:
+torchrun, accelerate, deepspeed, slurm.
+
+Hoy: FSDP + bf16 + grad accumulation es el standard
+para training > 13B params. DeepSpeed para > 100B
+(con offload).
 
 ---
 
 > 📚 **Adaptación al español** de la lección
 > "[48-distributed-fsdp-ddp]" del currículo
 > [AI Engineering from Scratch](https://github.com/rohitg00/ai-engineering-from-scratch)
-> (Rohit Ghumare, MIT). Implementación y documentación reescritas
-> desde cero. Ver [CREDITS.md](../../../CREDITS.md).
-
+> (Rohit Ghumare, MIT). Ver [CREDITS.md](../../../../CREDITS.md).

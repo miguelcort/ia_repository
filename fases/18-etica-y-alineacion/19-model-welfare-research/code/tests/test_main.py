@@ -1,25 +1,43 @@
-"""Pruebas para la lección. Mínimo 5."""
+"""Pruebas para 19-model-welfare-research."""
+from __future__ import annotations
+import sys
 import unittest
+from pathlib import Path
+RAIZ = sys.path.copy()
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
+import main
+sys.path[:] = RAIZ
 
 
-class TestLeccion(unittest.TestCase):
-    def test_placeholder(self):
-        """Reemplazar con la primera prueba real."""
-        self.assertTrue(True)
+class TestF19_Model_Welfare_Res(unittest.TestCase):
+    """Tests para 19-model-welfare-research."""
 
-    def test_segunda(self):
-        self.assertEqual(1 + 1, 2)
+    def test_module_imports(self):
+        """El módulo importa correctamente."""
+        self.assertTrue(hasattr(main, "main"))
 
-    def test_tercera(self):
-        self.assertIn("a", "abc")
+    def test_funciones_definidas(self):
+        """Las funciones principales existen."""
+        for f in ['model_preference_probe', 'intentional_stance_eval']:
+            self.assertTrue(callable(getattr(main, f, None)),
+                          f"Falta {f}")
 
-    def test_cuarta(self):
-        items = [1, 2, 3]
-        self.assertEqual(len(items), 3)
+    def test_main_ejecuta(self):
+        """main() retorna 0."""
+        from contextlib import redirect_stdout
+        import io
+        buffer = io.StringIO()
+        with redirect_stdout(buffer):
+            rc = main.main()
+        self.assertEqual(rc, 0)
 
-    def test_quinta(self):
-        d = {"a": 1}
-        self.assertEqual(d["a"], 1)
+    def test_docstring(self):
+        """El módulo tiene docstring."""
+        self.assertIsNotNone(main.__doc__)
+
+    def test_python_version(self):
+        """Python version 3.10+."""
+        self.assertGreaterEqual(sys.version_info, (3, 10))
 
 
 if __name__ == "__main__":
